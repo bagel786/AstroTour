@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: CatDialogue
+  m_EditorClassIdentifier: 
+  npcName: Shar
+  npcPortrait: {fileID: 6424542195577883763, guid: ecd7cae60d77d41229ca4270a43af1fa, type: 3}
+  dialogueLines:
+  - MEOOWWWWWW
+  autoProgressLines: 
+  endDialogueLines: 01
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1

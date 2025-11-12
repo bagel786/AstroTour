@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: AmandaDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Amanda
+  npcPortrait: {fileID: 7888565876707507071, guid: 7ec56a405c03f4d62b58a1557a3fcdf2, type: 3}
+  dialogueLines:
+  - Hey! I'm Amanda, I'm a nurse here at the MedLab Complex!
+  - I was told to keep an eye out for you, but I guess you found me first!
+  - 'I''m sure the space station workers have already briefed you on what goes on
+    around here, so I''ll get straight to the point. '
+  - We've got a job for you, are you up for it?
+  - Well, that's a bit unfortunate, we could really use a hand around here...
+  - 'Awesome sauce! I''ll need you to collect 5 DNA Splicers for us. '
+  - A lot of our research right now is on DNA, but we also take care of patients
+    as well as do MRI research!
+  - 'From the right, the rooms next to you are in order: Research lab, MRI room,
+    and the operating room!'
+  - Inside each room, you'll find a variety of specialists who will have little tasks
+    for you to carry out!
+  - Working at a hospital gets exhausting, it's nice to have someone like you take
+    a burden off of us!
+  - Oh! I see you've collected all the DNA Splicers I've asked you to!
+  - That's really impressive, the amount of talent that Mr. Jogglepuff must see in
+    you...
+  - Anyways, as proof of your aid, take this Caduceus Crest!
+  - It's evidence of the hard work and dedication you put into your work during your
+    time here!
+  - Hope to see you around, and not for any injuries!
+  autoProgressLines: 010101010001010100000101010100
+  endDialogueLines: 000000000100000001010000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 3
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0500000004000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 9
+  questCompletedIndex: 10
+  quest: {fileID: 11400000, guid: a820d2aef2fcd469da74685c3bcb1524, type: 2}
+  itemRewards:
+  - itemID: 9
+    quantity: 1
+    dialogueIndex: 12
+    canGiveMultipleTimes: 0
+    uniqueRewardID: medlab_badge_reward
+  itemRewardsGivenIndex: 14

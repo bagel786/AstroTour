@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: AlizaDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Aliza
+  npcPortrait: {fileID: 4347890161652326394, guid: 6e1754a78090d41b490925292eb0d186, type: 3}
+  dialogueLines:
+  - It's my first time at the hospital, and this waiting room is making me really
+    nervous...
+  - I'm super scared for my x-ray, those big spinning metal thingies just terrify
+    me!
+  - I feel like I'm gonna have a panic attack...
+  - Have you ever had an x-ray?!? Do they hurt?!
+  - Oh god...that doesn't make me feel any better...
+  - You look really trustworthy, so I'm gonna believe you!!
+  - I'm feeling better about it...deep breathes...
+  - 'Oh! Theyre calling me in for the x-ray! I gotta go! '
+  - Here, I found this little trinket thing in my bag earlier, no idea how it ended
+    up in there.
+  - I want you to have it!
+  - Bye!!
+  - I had the x-ray, it wasn't bad at all!!
+  autoProgressLines: 010101010001010101010000
+  endDialogueLines: 000000000100000000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 3
+    choices:
+    - No, they're safe
+    - Yes, they do
+    - Ask a doctor!
+    - Only the first time
+    nextDialogueIndexes: 05000000040000000400000004000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 6
+    quantity: 1
+    dialogueIndex: 9
+    canGiveMultipleTimes: 0
+    uniqueRewardID: aliza_splicer_reward
+  itemRewardsGivenIndex: 11

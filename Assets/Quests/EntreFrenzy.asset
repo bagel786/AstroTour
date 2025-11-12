@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de97ef33591144ee97791c1f0c477e0, type: 3}
+  m_Name: EntreFrenzy
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questName: Startup Surge
+  description: Collect 5 Innovation Tokens!
+  questId: b58d1cc0-ba41-40e7-80cd-ebc59cd3c9b0
+  objectives:
+  - objectiveID: 8
+    description: Collect 5 innovation tokens!
+    type: 0
+    requiredAmount: 5
+    currentAmount: 0
+    acceptableItemIDs: 08000000
+  questRewards: []

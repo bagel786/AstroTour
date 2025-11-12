@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: BentoDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Bento
+  npcPortrait: {fileID: 6693873755605984611, guid: 194f3d915cfcb44069abc53a634a802c, type: 3}
+  dialogueLines:
+  - Hi, my name is Benthomaar, but my friends call me Bento!
+  - I'm in charge of formulating most of these experiments, and making sure we comply
+    by standard regulations.
+  - For example, in psychology, we have to abide by certain laws, such as debriefing
+    our patients.
+  - If we're not careful in this process, we could get into deep, deep trouble!
+  autoProgressLines: 01010100
+  endDialogueLines: 00000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1

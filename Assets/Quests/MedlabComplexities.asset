@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de97ef33591144ee97791c1f0c477e0, type: 3}
+  m_Name: MedlabComplexities
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questName: 'Hospital Haywire '
+  description: Collect 5 DNA Splicers!
+  questId: 3fa50ee1-c7cd-444a-a2a8-f406be49c8f2
+  objectives:
+  - objectiveID: 6
+    description: Collect 5 DNA Splicers!
+    type: 0
+    requiredAmount: 5
+    currentAmount: 0
+    acceptableItemIDs: 06000000
+  questRewards: []

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=ed8a5a881057e44e6bd723bdc7d67924&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/background.png?fileID=2800000&amp;guid=2b099e3e6df35452db36fcc2094f02e4&amp;type=3#background&quot;);">
+        <ui:Label text="AstroTour&#10;" name="Header" class="header" style="font-size: 100px; -unity-text-align: upper-center; margin-right: 4px; margin-left: 2px; margin-bottom: 100px;" />
+        <ui:Button text="Play" name="Start" class="button" style="background-image: url(&quot;project://database/Assets/TechnoGami/2d%20UI%20button/AllSection/Section01/BlankButton.png?fileID=2800000&amp;guid=8d30fc405704e214498ee00bc05c50ad&amp;type=3#BlankButton&quot;); margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px;" />
+        <ui:Button text="Settings" name="Button" class="button" style="margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;" />
+        <ui:Button text="Quit" name="Quit" class="button" style="margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px;" />
+    </ui:VisualElement>
+</ui:UXML>

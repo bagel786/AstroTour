@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: EinsteinDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Ein Stine
+  npcPortrait: {fileID: 1157690336138879057, guid: 17488331c16a3428884ee3118b460f40, type: 3}
+  dialogueLines:
+  - Hey you! Get over here!
+  - Listen, I've been trying to market my new product NeuraLink HomeSync, but no
+    one will pay attention to my pitch!
+  - Can I pitch to you and get feedback?
+  - Aw shucks, I guess I really can't market anything...
+  - 'Really! Thanks! Let me get ready:'
+  - The NeuroLink HomeSync is a distributed neural data network that syncs cognitive
+    task lists and behavioral cues across household IoT devices using adaptive reinforcement
+    algorithms.
+  - That's my pitch!
+  - Could you tell me what's missing or wrong with it?
+  - Ugh...I don't think that's it. Try again!
+  - Oh yes! That makes perfect sense!
+  - I got so carried away with how exciting my new tech was, I forgot the common
+    family wouldn't understand what I'm talking about...
+  - Well thanks so much for your help! Here, take one of these innovation tokens!
+  - Thanks a lot for your aid! I might bag some investors now!
+  autoProgressLines: 01010100010101010001010000
+  endDialogueLines: 00000001000000000100000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 2
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0400000003000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  - dialogueIndex: 7
+    choices:
+    - Too long
+    - Too technical
+    - Not engaging
+    - Vague
+    nextDialogueIndexes: 08000000090000000800000008000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 8
+    quantity: 1
+    dialogueIndex: 11
+    canGiveMultipleTimes: 0
+    uniqueRewardID: einstein_reward_token
+  itemRewardsGivenIndex: 12

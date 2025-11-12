@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: JackDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Jack
+  npcPortrait: {fileID: 4107222357606143380, guid: 3eaaed9161ecb4cddbcf1f4a0545da2d, type: 3}
+  dialogueLines:
+  - Hi! My name is Jack, and I'm a cybersecurity specialist!
+  - My job is to protect our servers and network from various types of attacks.
+  - Unfortunately, we're currently going through a huge data attack!
+  - It's way too much for me to handle, but I'm the only specialist that clocked
+    in today...
+  - If only somone could help me...
+  - Oh i know!
+  - Will you help me out?
+  - Well, that's alright, but getting these systems back online will take a while...
+  - Okay, perfect!
+  - What kind of data attack is characterized by overloading of servers & networks
+    through traffic?
+  - No, a SYN flood is when an attacker floods a server with half-open TCP connections
+    to exhaust resources.
+  - No, a trojan is when disguised malware tricks users into installing it to steal
+    or damage data.
+  - 'No, a UDP attack is when an attacker floods a server with UDP packets to crash
+    or slow it down.  '
+  - Yes! A DDoS attack is when many machines overwhelm a target with traffic to make
+    it unavailable.
+  - Thanks to your help, I'll be able to fix these servers in no time!
+  - Here, as thanks for my help, take this!
+  - I'll be able to patch these servers up in a jiffy!
+  autoProgressLines: 0101010101010100010100000001010000
+  endDialogueLines: 0000000000000001000001010100000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 6
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0800000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  - dialogueIndex: 9
+    choices:
+    - SYN Flood
+    - DDoS Attack
+    - Trojan
+    - UDP Attack
+    nextDialogueIndexes: 0a0000000d0000000b0000000c000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 1
+    quantity: 1
+    dialogueIndex: 15
+    canGiveMultipleTimes: 0
+    uniqueRewardID: jack_hard_drive_reward
+  itemRewardsGivenIndex: 16

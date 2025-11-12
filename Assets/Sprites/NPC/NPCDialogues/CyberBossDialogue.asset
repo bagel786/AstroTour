@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: CyberBossDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Mr. Wattson
+  npcPortrait: {fileID: -859478701035112093, guid: 67067ad722fc146d4a78468deeb8d672, type: 3}
+  dialogueLines:
+  - Hey you there!
+  - We've got an amergency going on! Our data systems have been breached!
+  - I need your help, and if you're willing, I'll make sure to reward you handsomely!
+  - You up for the challenge?
+  - Great to hear! I need you to find me 5 hard drives
+  - Try talking to some of my employees, they might be of help.
+  - If only they were competent...sigh...
+  - No worries. Come back later if you want to
+  - Good luck finding those hard drives!
+  - Thanks for your help!
+  - Thanks so much! We'll be able to patch the data breach and save our consumer's
+    data!
+  - If you weren't so busy, I'd have made you work for me!
+  - Here, take this badge as proof of your knowledge!
+  autoProgressLines: 01010101010100000000010100
+  endDialogueLines: 00000000000001010101000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 3
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0400000006000000
+    onChoiceEvents: []
+    shouldTeleport: 0000
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 8
+  questCompletedIndex: 10
+  quest: {fileID: 11400000, guid: 330524a4a00c3416eb83d27eb2662a99, type: 2}
+  itemRewards:
+  - itemID: 3
+    quantity: 1
+    dialogueIndex: 12
+    canGiveMultipleTimes: 0
+    uniqueRewardID: wassons_item_reward
+  itemRewardsGivenIndex: 9

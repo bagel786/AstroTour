@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: FaizaDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Faiza
+  npcPortrait: {fileID: 4810365782745955364, guid: 6e754b0f223a8472891dcc369c436c96, type: 3}
+  dialogueLines:
+  - Hi! My name is Faiza, and I run a nail business!
+  - I run everything out of my house, so I'm able to control everything from the
+    nail setting to design!
+  - It does make me really busy though, and I'm always booked.
+  - For business owners who operate out their house, marketing becomes difficult.
+  - We don't have the capital for big billboards, especially as a local business.
+  - What do you think the best way for me to advertise my business is?
+  - Although this is a type of marketing, there is a better way for me specifically!
+    Try again!
+  - If you're not marketing at all, are you really a business owner...
+  - Yes! That's correct, especially with technology taking over everything, you NEED
+    to be using social media for your advertisements!
+  - You've impressed me with your marketing skills, so take this innovation token!
+  - If you know anyone who needs a nail set, hit me up!
+  autoProgressLines: 0101010101010001010100
+  endDialogueLines: 0000000000000100000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 5
+    choices:
+    - Flyers
+    - Word of Mouth
+    - Social Media
+    - None
+    nextDialogueIndexes: 06000000060000000800000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 8
+    quantity: 1
+    dialogueIndex: 9
+    canGiveMultipleTimes: 0
+    uniqueRewardID: faiza_token_reward
+  itemRewardsGivenIndex: 10

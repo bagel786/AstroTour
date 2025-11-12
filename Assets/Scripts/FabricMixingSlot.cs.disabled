@@ -1,0 +1,78 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class FabricMixingSlot : MonoBehaviour
+{
+    [Header("Slot Configuration")]
+    public int slotIndex = 0;
+    public string slotName = "Mixing Slot";
+    public Image slotImage;
+    public Color emptyColor = Color.white;
+    public Color filledColor = Color.green;
+    
+    private FabricMaterial currentMaterial;
+    private bool hasMaterial = false;
+    
+    void Start()
+    {
+        if (slotImage == null)
+        {
+            slotImage = GetComponent<Image>();
+        }
+        
+        UpdateSlotVisual();
+    }
+    
+    public bool CanAcceptMaterial(FabricMaterial material)
+    {
+        // Check if slot can accept this material
+        return !hasMaterial && material != null;
+    }
+    
+    public void SetMaterial(FabricMaterial material)
+    {
+        currentMaterial = material;
+        hasMaterial = material != null;
+        UpdateSlotVisual();
+    }
+    
+    public FabricMaterial GetMaterial()
+    {
+        return currentMaterial;
+    }
+    
+    public bool HasMaterial()
+    {
+        return hasMaterial && currentMaterial != null;
+    }
+    
+    public void ClearMaterial()
+    {
+        currentMaterial = null;
+        hasMaterial = false;
+        UpdateSlotVisual();
+    }
+    
+    public void RemoveMaterial()
+    {
+        ClearMaterial();
+    }
+    
+    public void ClearSlot()
+    {
+        ClearMaterial();
+    }
+    
+    public void ResetAppearance()
+    {
+        UpdateSlotVisual();
+    }
+    
+    private void UpdateSlotVisual()
+    {
+        if (slotImage != null)
+        {
+            slotImage.color = hasMaterial ? filledColor : emptyColor;
+        }
+    }
+}

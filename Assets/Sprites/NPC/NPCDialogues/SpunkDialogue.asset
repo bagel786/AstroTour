@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: SpunkDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Spunk
+  npcPortrait: {fileID: 1063745061124070376, guid: 9e81515dedb7b4627bb0c82903bc24b1, type: 3}
+  dialogueLines:
+  - Hey there punk! My name's Spunk, and I'm in charge of managing the hardware here!
+  - 'Thanks to the data attack, a lot of our servers are offline and not working
+    right now. '
+  - Three of them are offline, so I've really gotta get to work!
+  - Catch ya later bub!
+  autoProgressLines: 01010100
+  endDialogueLines: 00000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 0
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1

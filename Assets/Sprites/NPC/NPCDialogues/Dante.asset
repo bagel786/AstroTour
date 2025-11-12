@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: Dante
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Dante
+  npcPortrait: {fileID: -7715902427486114116, guid: 76c3d4f7634794e88844d13f64722fd8, type: 3}
+  dialogueLines:
+  - Hey there buddy!
+  - 'My names Dante, and I''m in charge of detecting types of cybercrimes. '
+  - It's my job to prevent them! I'm kind of like a superhero!
+  - I'm supposed to be working on something right now, but I can't quite remember
+    the name!
+  - Here, help me out!
+  - What is a scam where you get tricked into giving information over the phone?
+  - Yes! That's it! You're the best!
+  - If it wasn't for you, I'd probably get fired...
+  - The boss pays well, but he can be harsh..
+  - As payment for your help, take this!
+  - No...I don't think thats correct
+  - Try again, and be careful!
+  - Thanks for getting me out that pickle man!
+  autoProgressLines: 01010101010101010100010000
+  endDialogueLines: 00000000000000000001000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 5
+    choices:
+    - Smishing
+    - Phishing
+    - Vishing
+    - Spoofing
+    nextDialogueIndexes: 0a0000000a000000060000000a000000
+    onChoiceEvents: []
+    shouldTeleport: 00
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 1
+    quantity: 1
+    dialogueIndex: 9
+    canGiveMultipleTimes: 0
+    uniqueRewardID: dantes_hard_drive_reward
+  itemRewardsGivenIndex: 12

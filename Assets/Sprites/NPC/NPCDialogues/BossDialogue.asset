@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: BossDialogue
+  m_EditorClassIdentifier: 
+  npcName: Mr. Jogglepuff
+  npcPortrait: {fileID: -7940084106219207453, guid: 194f3d915cfcb44069abc53a634a802c, type: 3}
+  dialogueLines:
+  - Hey, my name is Mr. Jogglepuff, and I'm the head of research in AstroLabs!!
+  - Our labs are built to research the other worlds located throughout AstroMania,
+    gathering data so that everything runs smoothly!
+  - 'You''ve been chosen as an outstanding candidate to do research for us, as we
+    believe you have the potential to do great work! '
+  - Are you willing to contribute to the cause?
+  - Well that stinks, but if you choose to come back, you're always welcome!
+  - Perfect! I'll give you a few tasks to get started with.
+  - Using the spaceship pass behind me, you can travel to different worlds.
+  - 'Each world will give you a specific award if you complete a certain amount of
+    tasks there. '
+  - I need you to collect awards from each of the five worlds!
+  - I'd recommend getting started with MedLab Complex or Cipher Nexus, but its your
+    choice!
+  - Use this spaceship pass to travel!
+  - How's the research going along?
+  autoProgressLines: 010101010001010101010000
+  endDialogueLines: 000000000100000000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 3
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0500000004000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 0100
+  questInProgressIndex: 11
+  questCompletedIndex: 8
+  quest: {fileID: 11400000, guid: 353d62672f4644fb69c9732093deecb9, type: 2}
+  itemRewards:
+  - itemID: 2
+    quantity: 1
+    dialogueIndex: 10
+    canGiveMultipleTimes: 0
+    uniqueRewardID: jogglepuff_spaceship_pass
+  itemRewardsGivenIndex: -1

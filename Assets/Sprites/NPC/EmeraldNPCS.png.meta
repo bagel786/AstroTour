@@ -1,0 +1,834 @@
+fileFormatVersion: 2
+guid: ad798c8026c65415c82f5802b64358fe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4027225260726611466
+    second: EmeraldNPCS_0
+  - first:
+      213: 4454526852620645743
+    second: EmeraldNPCS_1
+  - first:
+      213: 4842036993262049757
+    second: EmeraldNPCS_2
+  - first:
+      213: -3761297987150015204
+    second: EmeraldNPCS_3
+  - first:
+      213: -2492424230055621429
+    second: EmeraldNPCS_4
+  - first:
+      213: -3468229414040143396
+    second: EmeraldNPCS_5
+  - first:
+      213: -5424070295970966761
+    second: EmeraldNPCS_6
+  - first:
+      213: -7892395436633419719
+    second: EmeraldNPCS_7
+  - first:
+      213: -2426858608627289103
+    second: EmeraldNPCS_8
+  - first:
+      213: -8944243468741568193
+    second: EmeraldNPCS_9
+  - first:
+      213: -6964816868030759733
+    second: EmeraldNPCS_10
+  - first:
+      213: -5447462590949354011
+    second: EmeraldNPCS_11
+  - first:
+      213: 976566824051348005
+    second: EmeraldNPCS_12
+  - first:
+      213: -340761349406398676
+    second: EmeraldNPCS_13
+  - first:
+      213: 773186908195881326
+    second: EmeraldNPCS_14
+  - first:
+      213: -4422729243013355756
+    second: EmeraldNPCS_15
+  - first:
+      213: -6365764566206710910
+    second: EmeraldNPCS_16
+  - first:
+      213: -3177505263407966990
+    second: EmeraldNPCS_17
+  - first:
+      213: 6016714256453865592
+    second: EmeraldNPCS_18
+  - first:
+      213: -2215828027320806380
+    second: EmeraldNPCS_19
+  - first:
+      213: 6649278177381807493
+    second: EmeraldNPCS_20
+  - first:
+      213: -8589516138287464951
+    second: EmeraldNPCS_21
+  - first:
+      213: 643884930064511372
+    second: EmeraldNPCS_22
+  - first:
+      213: 2575351881634569176
+    second: EmeraldNPCS_23
+  - first:
+      213: 5406716813215229407
+    second: EmeraldNPCS_24
+  - first:
+      213: 3649555480345758813
+    second: EmeraldNPCS_25
+  - first:
+      213: -40377126712804381
+    second: EmeraldNPCS_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EmeraldNPCS_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 47
+        width: 15
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f119e766fb6c18c0800000000000000
+      internalID: -4027225260726611466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 47
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6574e44298a1dd30800000000000000
+      internalID: 4454526852620645743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 47
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd95facbdfe523340800000000000000
+      internalID: 4842036993262049757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 47
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15188da86f2dcbc0800000000000000
+      internalID: -3761297987150015204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_4
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 47
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc45f14e51296dd0800000000000000
+      internalID: -2492424230055621429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 47
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9739039bf5edfc0800000000000000
+      internalID: -3468229414040143396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 47
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71317e3cdc4d9b4b0800000000000000
+      internalID: -5424070295970966761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_7
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 47
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9301d848a24987290800000000000000
+      internalID: -7892395436633419719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_8
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 47
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3fba814f0125ed0800000000000000
+      internalID: -2426858608627289103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f391d0d24f9afd380800000000000000
+      internalID: -8944243468741568193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_10
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccb06fa5fff75f90800000000000000
+      internalID: -6964816868030759733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 24
+        width: 12
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e51c3ba2a9b664b0800000000000000
+      internalID: -5447462590949354011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52213073a567d8d00800000000000000
+      internalID: 976566824051348005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_13
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27e27fab5f554bf0800000000000000
+      internalID: -340761349406398676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e618fff7569eaba00800000000000000
+      internalID: 773186908195881326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_15
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 24
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417e474af2f4f92c0800000000000000
+      internalID: -4422729243013355756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_16
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 24
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bfa73bad248a7a0800000000000000
+      internalID: -6365764566206710910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_17
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 24
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f452ae4ccb37e3d0800000000000000
+      internalID: -3177505263407966990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 16
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87016f20db9af7350800000000000000
+      internalID: 6016714256453865592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_19
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414503c262ccf31e0800000000000000
+      internalID: -2215828027320806380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585799fd54bf64c50800000000000000
+      internalID: 6649278177381807493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_21
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ef3e8d498ebc880800000000000000
+      internalID: -8589516138287464951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_22
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81f8b4bee98fe800800000000000000
+      internalID: 643884930064511372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_23
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db567c34ec7db320800000000000000
+      internalID: 2575351881634569176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_24
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd563dcab44880b40800000000000000
+      internalID: 5406716813215229407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cc61a8f53d5a230800000000000000
+      internalID: 3649555480345758813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmeraldNPCS_26
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb7b39973d807ff0800000000000000
+      internalID: -40377126712804381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b888b043de4304a3694239332f6508a5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":22.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      EmeraldNPCS_0: -4027225260726611466
+      EmeraldNPCS_1: 4454526852620645743
+      EmeraldNPCS_10: -6964816868030759733
+      EmeraldNPCS_11: -5447462590949354011
+      EmeraldNPCS_12: 976566824051348005
+      EmeraldNPCS_13: -340761349406398676
+      EmeraldNPCS_14: 773186908195881326
+      EmeraldNPCS_15: -4422729243013355756
+      EmeraldNPCS_16: -6365764566206710910
+      EmeraldNPCS_17: -3177505263407966990
+      EmeraldNPCS_18: 6016714256453865592
+      EmeraldNPCS_19: -2215828027320806380
+      EmeraldNPCS_2: 4842036993262049757
+      EmeraldNPCS_20: 6649278177381807493
+      EmeraldNPCS_21: -8589516138287464951
+      EmeraldNPCS_22: 643884930064511372
+      EmeraldNPCS_23: 2575351881634569176
+      EmeraldNPCS_24: 5406716813215229407
+      EmeraldNPCS_25: 3649555480345758813
+      EmeraldNPCS_26: -40377126712804381
+      EmeraldNPCS_3: -3761297987150015204
+      EmeraldNPCS_4: -2492424230055621429
+      EmeraldNPCS_5: -3468229414040143396
+      EmeraldNPCS_6: -5424070295970966761
+      EmeraldNPCS_7: -7892395436633419719
+      EmeraldNPCS_8: -2426858608627289103
+      EmeraldNPCS_9: -8944243468741568193
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

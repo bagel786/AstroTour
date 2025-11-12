@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: BoxHelper
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Johnathan
+  npcPortrait: {fileID: 6693873755605984611, guid: 194f3d915cfcb44069abc53a634a802c, type: 3}
+  dialogueLines:
+  - Oh hey there! You startled me...
+  - The boss has me organizing a bunch of stuff into these boxes, but I have no clue
+    what goes where!
+  - But i mean...it technically works...you might just have to check every box if
+    you wanna find something though...
+  - Guess the Big-O notation of this is not good!
+  autoProgressLines: 01010100
+  endDialogueLines: 00000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1

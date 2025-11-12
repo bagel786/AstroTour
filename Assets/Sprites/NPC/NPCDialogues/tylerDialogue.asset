@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: tylerDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Tyler
+  npcPortrait: {fileID: -4461460811218699734, guid: 997cf6c14ea2c404eb3c2cdb1a365abb, type: 3}
+  dialogueLines:
+  - Hey! I'm Tyler, which you might know if you've already spoken to my sister!
+  - I'm the inventor of the HoneyFarms, and me and my sister are both in charge of
+    the company!
+  - Me and Tate work really well together as a team, and we keep our company afloat
+    all by ourselves!
+  - One way we're able to do this is with equity, which means that everyone has what
+    they need to sueed!
+  - However, in a financial context, equity has a different meaning. Do you know
+    what it is?
+  - Come back if you figure it out!
+  - 'Okay then! Riddle me this: What does equity mean in a financial context?'
+  - That's not it! Try again later.
+  - Perfect! That's spot on! Me and Tate split equity 50/50, since we're the only
+    two people in the company.
+  - I'm honestly really surprised you knew that, so here, take this as a prize!
+  - It's not that much, but I hope it makes you happy!
+  - If you ever want some honeycomb, come and give us a visit!
+  autoProgressLines: 010101010100010001010100
+  endDialogueLines: 000000000001000100000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 4
+    choices:
+    - yes
+    - no
+    nextDialogueIndexes: 0600000005000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  - dialogueIndex: 6
+    choices:
+    - 'Money borrowed '
+    - Ownership of a company
+    - Company Debt
+    - Government Bonds
+    nextDialogueIndexes: 07000000080000000700000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 7
+    quantity: 1
+    dialogueIndex: 10
+    canGiveMultipleTimes: 0
+    uniqueRewardID: tyler_honey_reward
+  - itemID: 8
+    quantity: 1
+    dialogueIndex: 10
+    canGiveMultipleTimes: 0
+    uniqueRewardID: tyler_token_reward
+  itemRewardsGivenIndex: 11

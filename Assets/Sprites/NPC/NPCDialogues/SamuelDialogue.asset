@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: SamuelDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Samuel
+  npcPortrait: {fileID: 1157690336138879057, guid: 17488331c16a3428884ee3118b460f40, type: 3}
+  dialogueLines:
+  - Greetings and salutations scientist! My name is Samuel, and I'm the head of the
+    DNA research institute at the complex!
+  - Right now, we're working on revolutionary technology that will allow us to alter
+    DNA genes in humans.
+  - Very fascinating stuff really, I could talk about it all day.
+  - Unfortunately, I am swamped with work, managing all these people is really tough
+    you know!
+  - But the nurse at the front office told me there'd be someone here to help for
+    a while!
+  - I'm assuming that's you, since I've never seen you around before, and I've got
+    a long memory!
+  - You ready for me to put you to work pal?
+  - Aw shucks! So much for being helpful...
+  - Excellent! We don't have a minute to waste here!
+  - You see that PC to my left? That right there is used for observing DNA Strands.
+  - 'To train our ML model, we need to make sure the computer knows how to code for
+    specific proteins with codons. '
+  - What I need you to do is match each base pair in one strand to its complementary
+    base pair!
+  - It shouldn't take you too long, but it'll get your brain thinking!
+  - Have fun!
+  - Quick! I need this task done ASAP!
+  - Whew! You finished pretty quick!
+  - Seems like you did pretty good work as well!
+  - Mr. Jogglepuff really did send his best researchers out here!
+  - Take this as a token of my appreciation!
+  - Who knows, it may be helpful for you in the future!
+  - Thanks for all your help!
+  autoProgressLines: 010101010101010001010101010000010101010000
+  endDialogueLines: 000000000000000100000000000101000000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 6
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0800000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 14
+  questCompletedIndex: 15
+  quest: {fileID: 11400000, guid: 88662cd09f7194fa88513e14c36a43ca, type: 2}
+  itemRewards:
+  - itemID: 6
+    quantity: 1
+    dialogueIndex: 18
+    canGiveMultipleTimes: 0
+    uniqueRewardID: samuel_token_reward
+  itemRewardsGivenIndex: 20

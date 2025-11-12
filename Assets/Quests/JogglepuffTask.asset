@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de97ef33591144ee97791c1f0c477e0, type: 3}
+  m_Name: JogglepuffTask
+  m_EditorClassIdentifier: 
+  questName: Jogglepuff's Task
+  description: Collect gym badges to help!
+  questId: fa02c43d-fcb7-4551-b8a6-7d9602eeff67
+  objectives:
+  - objectiveID: 3
+    description: Collect 8 Gym Badges!
+    type: 0
+    requiredAmount: 5
+    currentAmount: 0
+    acceptableItemIDs: 030000000500000009000000
+  questRewards: []

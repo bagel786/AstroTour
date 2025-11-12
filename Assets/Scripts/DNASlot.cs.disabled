@@ -1,0 +1,186 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class DNASlot : MonoBehaviour
+{
+    [Header("Slot Configuration")]
+    public string expectedBase; // A, T, C, or G - what should be placed here
+    public string displayedBase; // A, T, C, or G - what's shown on the left side
+    
+    [Header("UI References")]
+    public Image slotBackground;
+    public TMP_Text displayText; // Shows the base that needs to be paired (left side)
+    public TMP_Text slotLabel; // Shows what's currently in the slot
+    
+    [Header("Visual States")]
+    public Color emptyColor = Color.gray;
+    public Color filledColor = Color.white;
+    public Color correctColor = Color.green;
+    public Color incorrectColor = Color.red;
+    
+    private DNABase currentBase;
+    private bool hasBase = false;
+    
+    void Start()
+    {
+        InitializeSlot();
+    }
+    
+    private void InitializeSlot()
+    {
+        // Set the displayed base text (left side - what needs to be paired)
+        if (displayText != null)
+        {
+            displayText.text = displayedBase;
+        }
+        
+        // Set initial appearance
+        UpdateSlotAppearance();
+    }
+    
+    public bool CanAcceptBase(DNABase dnaBase)
+    {
+        // Can only accept if slot is empty and base matches expected
+        return !hasBase && dnaBase != null && dnaBase.GetBaseType() == expectedBase;
+    }
+    
+    public bool TryPlaceBase(DNABase dnaBase)
+    {
+        if (!CanAcceptBase(dnaBase))
+        {
+            return false;
+        }
+        
+        // Place the base
+        currentBase = dnaBase;
+        hasBase = true;
+        
+        // Update base state
+        dnaBase.SetPlaced(true);
+        dnaBase.transform.SetParent(transform);
+        dnaBase.transform.localPosition = Vector3.zero;
+        
+        // Disable drag handler to prevent further dragging
+        DNADragHandler dragHandler = dnaBase.GetComponent<DNADragHandler>();
+        if (dragHandler != null)
+        {
+            dragHandler.enabled = false;
+        }
+        
+        // Update visual appearance
+        UpdateSlotAppearance();
+        
+        // Notify controller
+        SimpleDNASequencingController controller = FindAnyObjectByType<SimpleDNASequencingController>();
+        if (controller != null)
+        {
+            controller.OnBasePlaced();
+        }
+        
+        return true;
+    }
+    
+    public DNABase RemoveBase()
+    {
+        if (!hasBase) return null;
+        
+        DNABase removedBase = currentBase;
+        
+        // Clear slot
+        currentBase = null;
+        hasBase = false;
+        
+        // Reset base state
+        if (removedBase != null)
+        {
+            removedBase.SetPlaced(false);
+            
+            // Re-enable drag handler
+            DNADragHandler dragHandler = removedBase.GetComponent<DNADragHandler>();
+            if (dragHandler != null)
+            {
+                dragHandler.enabled = true;
+            }
+        }
+        
+        // Update appearance
+        UpdateSlotAppearance();
+        
+        return removedBase;
+    }
+    
+    public void ClearSlot()
+    {
+        if (hasBase && currentBase != null)
+        {
+            currentBase.ResetBase();
+            
+            // Re-enable drag handler
+            DNADragHandler dragHandler = currentBase.GetComponent<DNADragHandler>();
+            if (dragHandler != null)
+            {
+                dragHandler.enabled = true;
+            }
+        }
+        
+        currentBase = null;
+        hasBase = false;
+        UpdateSlotAppearance();
+    }
+    
+    private void UpdateSlotAppearance()
+    {
+        if (slotBackground == null) return;
+        
+        if (hasBase)
+        {
+            // Check if it's correct
+            bool isCorrect = currentBase != null && currentBase.GetBaseType() == expectedBase;
+            slotBackground.color = isCorrect ? correctColor : incorrectColor;
+            
+            // Update slot label to show what's placed
+            if (slotLabel != null && currentBase != null)
+            {
+                slotLabel.text = currentBase.GetBaseType();
+            }
+        }
+        else
+        {
+            // Empty slot
+            slotBackground.color = emptyColor;
+            
+            if (slotLabel != null)
+            {
+                slotLabel.text = "?";
+            }
+        }
+    }
+    
+    public bool HasCorrectBase()
+    {
+        return hasBase && currentBase != null && currentBase.GetBaseType() == expectedBase;
+    }
+    
+    public void PlaceCorrectBase()
+    {
+        // Find the correct base and place it (for completed state)
+        DNABase[] allBases = FindObjectsByType<DNABase>(FindObjectsSortMode.None);
+        
+        foreach (DNABase dnaBase in allBases)
+        {
+            if (dnaBase.GetBaseType() == expectedBase && !dnaBase.IsPlaced())
+            {
+                TryPlaceBase(dnaBase);
+                break;
+            }
+        }
+    }
+    
+    // Getters
+    public bool HasBase() => hasBase;
+    public bool HasFragment() => hasBase; // Alias for HasBase for compatibility
+    public DNABase GetBase() => currentBase;
+    public string GetExpectedBase() => expectedBase;
+    public string GetDisplayedBase() => displayedBase;
+}

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: BusinessManDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: 'Richie '
+  npcPortrait: {fileID: -9098726138166136958, guid: 514b5f41216434ee18570ff3ace7f8e6, type: 3}
+  dialogueLines:
+  - Hey there young lad!
+  - I am the head of marketing for one of the largest corporations located all throughout
+    AstroMania! We sell almost everything you can imagine!
+  - 'You look like a bright young lad, and so I have a business offer for you.  '
+  - I need you to complete a little task for me, nothing too crazy, but it will put
+    your marketing skills to the test!
+  - So what do you say? WIll you take on this challenge?
+  - 'Perfect! '
+  - I was supposed to present my marketing plans to some very important executives
+    today, but while setting up, I dropped all my cards!
+  - Please, match the marketing campaign with its target audience!
+  - Use the sign next to me to start!
+  - Quick! Time is of the essence here!
+  - Golly gee, you fixed them just in the nick of time!
+  - Here, for your troubles, take this innovation token!
+  - Well that's alright, but if you change your mind, come back fast!
+  - Thanks so much! Now my meeting will run smoothly!
+  autoProgressLines: 0101010101010101000001000000
+  endDialogueLines: 0000000000000000010100010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 4
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 050000000c000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 9
+  questCompletedIndex: 10
+  quest: {fileID: 11400000, guid: 301cda32e6ef349a480cd03fc0e587e0, type: 2}
+  itemRewards:
+  - itemID: 8
+    quantity: 1
+    dialogueIndex: 11
+    canGiveMultipleTimes: 0
+    uniqueRewardID: businessman_terminal_reward
+  itemRewardsGivenIndex: 13

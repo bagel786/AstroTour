@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: JennyDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Jenny
+  npcPortrait: {fileID: 7888565876707507071, guid: 7ec56a405c03f4d62b58a1557a3fcdf2, type: 3}
+  dialogueLines:
+  - I'm here to help Dr. Stephens in case he needs any assistance, and I'm also an
+    anesthesiologist.
+  - Patient Sofia won't be able to speak coherently for a while, as long as shes
+    under the effects of anesthesia.
+  - So that leaves me to talk to!
+  - I know a lot about the medical industry, and I've been involved in it for a long,
+    long time!
+  - Although, anyone involved in the medical industry is always involved in it for
+    a while.
+  - It's just so time consuming, but we do this because we love our jobs, as well
+    as the pay!
+  - Being in this field isn't for everyone though
+  - Do you know how long it takes to become a medical doctor?
+  - No, you undershot there a little bit. Try again!
+  - Nope, you're overestimating it just a tad.
+  - Yeah! On average, becoming a medical doctor takes around 8 years, whereas a regular
+    bachelors takes around 4. It's almost double the time!
+  - 'Not to discourage you from going the medical route, but it is something to keep
+    in mind. '
+  - Med can be really fun and exciting, but it will take a lot from you!
+  - I enjoyed this conversation a lot, normally I'm always cooped up in the operating
+    room and don't get to speak much...
+  - Here, take this DNA Splicer!
+  - You should look around other rooms!
+  - I wouldn't trade the time it took for me to become a nurse for anything at all!
+  autoProgressLines: 0101010101010101000001010101010000
+  endDialogueLines: 0000000000000000010100000000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1.03
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 7
+    choices:
+    - 6
+    - 4
+    - 8
+    - 12
+    nextDialogueIndexes: 08000000080000000a00000009000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 00
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 6
+    quantity: 1
+    dialogueIndex: 14
+    canGiveMultipleTimes: 0
+    uniqueRewardID: jenny_splicer_reward
+  itemRewardsGivenIndex: 16

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: jermaineDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Jermaine
+  npcPortrait: {fileID: 4107222357606143380, guid: 3eaaed9161ecb4cddbcf1f4a0545da2d, type: 3}
+  dialogueLines:
+  - Welcome to Venture Plaza! My name is Jermaine, and I manage the space center
+    here.
+  - Let me give you a quick rundown of the place!
+  - Venture Plaza is filled with ambitious entrepreneurs, looking to impress various
+    Venture Capitalists to invest in their startups!
+  - It's where dreams are realized, and you can learn a lot by interacting with these
+    bright entrepreneurs!
+  - Enjoy your travels here!
+  autoProgressLines: 0101010100
+  endDialogueLines: 0000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1

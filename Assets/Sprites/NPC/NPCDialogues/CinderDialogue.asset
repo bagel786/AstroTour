@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: CinderDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Cinder
+  npcPortrait: {fileID: -7940084106219207453, guid: 194f3d915cfcb44069abc53a634a802c, type: 3}
+  dialogueLines:
+  - Hey, my name's Cinder, and I'm the head of the brain research lab here!
+  - 'MRIs and fMRIs are used in all sorts of research, particularly research involving
+    brains. '
+  - It helps us observe activity & brain structure, so that we can learn more about
+    it!
+  - Although if you ask me, there's a limit to how much a brain can study another
+    brain to understand itself...
+  - Kind of paradoxical to me, but who knows!
+  - Anyways, fMRIs & MRIs have one big difference.
+  - Do you know what an fMRI shows that an MRI doesn't?
+  - Eh, that's not exactly it, but I see how you thought about that!
+  - 'Yes, that''s it! fMRIs show current brain activity at that moment, while MRIs
+    are basically photographs of the brain. '
+  - Unfortunately, they do cost a lot more, so experiments using them typically have
+    small sample sizes.
+  - You know, you impress me with your knowledge!
+  - Here, take this DNA Splicer!
+  - When I go, I'm gonna donate my brain to science...
+  autoProgressLines: 01010101010101000101010000
+  endDialogueLines: 00000000000000010000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 6
+    choices:
+    - Brain Activity
+    - Bone Density
+    - Nerve Signals
+    - Muscle Movement
+    nextDialogueIndexes: 08000000070000000700000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards:
+  - itemID: 6
+    quantity: 1
+    dialogueIndex: 11
+    canGiveMultipleTimes: 0
+    uniqueRewardID: cinder_dna_reward
+  itemRewardsGivenIndex: 12

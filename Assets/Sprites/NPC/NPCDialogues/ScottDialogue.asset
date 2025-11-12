@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: ScottDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Scott
+  npcPortrait: {fileID: -2080041050677604431, guid: 4f3a75dd75b224fb0b7f2407525033fe, type: 3}
+  dialogueLines:
+  - Greetings, I've been expecting you!
+  - Mr. Jogglepuff told me about your tasks, so I'm here to introduce you.
+  - I know you're doing research around these parts, so I have the perfect msision
+    for you to complete!
+  - At Venture Plaza, we use innovation tokens to prove competency, which you can
+    get from various vendors who have been successful!
+  - These are used to exchange for investment from VCs and badges.
+  - All I need you to do is collect five of these and give them to me!
+  - Are you up for the challenge?
+  - That's alright, but think about Mr. Jogglepuff's belief in you...
+  - Perfect! I'd say to get started by talking to the people at these booths, who
+    knows what you may find!
+  - I see you've collected all five of the tokens you needed!
+  - You did this really quickly, I'm very impressed with your work. Normally, it
+    takes people months to even years to get this amount!
+  - Mr. Jogglepuff really didn't disappoint me this time...
+  - Here, I'll take these five tokens and give you a Venture Crest as your reward!
+  - If you have a good idea for a startup in the future, try pitching it to a VC
+    or investor!
+  - Good luck finding those tokens!
+  autoProgressLines: 010101010101010000010101010000
+  endDialogueLines: 000000000000000101000000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 6
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0800000007000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 14
+  questCompletedIndex: 9
+  quest: {fileID: 11400000, guid: 3b12b3f201398477eb4ce6a9a6a77d42, type: 2}
+  itemRewards:
+  - itemID: 5
+    quantity: 1
+    dialogueIndex: 12
+    canGiveMultipleTimes: 0
+    uniqueRewardID: scott_entrepreneurship_reward
+  itemRewardsGivenIndex: 13
