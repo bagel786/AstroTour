@@ -20,8 +20,9 @@ MonoBehaviour:
   - Traveling to Astrolabs...
   - Traveling to Venture Plaza...
   - Traveling to MedLab Complex...
-  autoProgressLines: 0100000000
-  endDialogueLines: 0001010101
+  - Traveling to Quantopolis...
+  autoProgressLines: 010000000000
+  endDialogueLines: 000101010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
@@ -34,7 +35,8 @@ MonoBehaviour:
     - Astrolabs
     - Venture Plaza
     - MedLab Complex
-    nextDialogueIndexes: 01000000020000000300000004000000
+    - Quantapolis
+    nextDialogueIndexes: 0100000002000000030000000400000005000000
     onChoiceEvents:
     - m_PersistentCalls:
         m_Calls:
@@ -78,13 +80,14 @@ MonoBehaviour:
             m_StringArgument: Entre_waypoint
             m_BoolArgument: 0
           m_CallState: 2
-    shouldTeleport: 01010101
+    shouldTeleport: 0101010101
     waypointNames:
     - CN_waypoint
     - Astrolab_waypoint
     - Entre_waypoint
     - Hospital_waypoint
-    givesQuest: 00000000
+    - Quant_waypoint
+    givesQuest: 0000000000
   questInProgressIndex: 0
   questCompletedIndex: 0
   quest: {fileID: 0}

@@ -147,11 +147,13 @@ public enum ObjectiveType
 public class QuestProgress
 {
     public Quest quest;
+    public string questId; // Store questId as a field for serialization
     public List<QuestObjective> objectives;
 
     public QuestProgress(Quest quest)
     {
         this.quest = quest;
+        this.questId = quest.questId; // Store the ID
         objectives = new List<QuestObjective>();
 
         // deep copy to avoid modifying original quest objectives
@@ -171,7 +173,7 @@ public class QuestProgress
 
     public bool IsCompleted => objectives.TrueForAll(o => o.isCompleted);
 
-    public string QuestID => quest.questId;
+    public string QuestID => questId; // Use the stored field instead of accessing quest reference
 }
 
 

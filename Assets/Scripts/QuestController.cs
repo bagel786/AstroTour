@@ -32,7 +32,18 @@ public class QuestController : MonoBehaviour
     {
         if (activeQuests != null)
         {
-            int removedCount = activeQuests.RemoveAll(q => q == null || string.IsNullOrEmpty(q.QuestID) || q.objectives == null);
+            int removedCount = activeQuests.RemoveAll(q => 
+            {
+                if (q == null) return true;
+                try
+                {
+                    return string.IsNullOrEmpty(q.QuestID) || q.objectives == null;
+                }
+                catch
+                {
+                    return true; // Remove if we can't access properties
+                }
+            });
             if (removedCount > 0)
             {
                 Debug.LogWarning($"QuestController: Removed {removedCount} corrupted quest entries");
@@ -420,15 +431,31 @@ public class QuestController : MonoBehaviour
     public void LoadQuestProgress(List<QuestProgress> savedQuests){
         activeQuests = savedQuests ?? new();
         
-        // Restore acceptableItemIDs from original quest configurations
+        // Restore quest ScriptableObject references from questId
         foreach (QuestProgress questProgress in activeQuests)
         {
-            if (questProgress?.quest?.objectives != null && questProgress.objectives != null)
+            if (questProgress != null && !string.IsNullOrEmpty(questProgress.questId))
             {
-                for (int i = 0; i < questProgress.objectives.Count && i < questProgress.quest.objectives.Count; i++)
+                // Find the quest ScriptableObject by ID
+                if (questProgress.quest == null)
                 {
-                    // Restore acceptableItemIDs from the original quest ScriptableObject
-                    questProgress.objectives[i].acceptableItemIDs = questProgress.quest.objectives[i].acceptableItemIDs;
+                    Quest[] allQuests = Resources.LoadAll<Quest>("");
+                    questProgress.quest = System.Array.Find(allQuests, q => q != null && q.questId == questProgress.questId);
+                    
+                    if (questProgress.quest == null)
+                    {
+                        Debug.LogWarning($"QuestController: Could not find Quest ScriptableObject for questId '{questProgress.questId}'");
+                    }
+                }
+                
+                // Restore acceptableItemIDs from original quest configurations
+                if (questProgress.quest?.objectives != null && questProgress.objectives != null)
+                {
+                    for (int i = 0; i < questProgress.objectives.Count && i < questProgress.quest.objectives.Count; i++)
+                    {
+                        // Restore acceptableItemIDs from the original quest ScriptableObject
+                        questProgress.objectives[i].acceptableItemIDs = questProgress.quest.objectives[i].acceptableItemIDs;
+                    }
                 }
             }
         }
