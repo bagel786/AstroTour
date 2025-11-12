@@ -1,36 +1,21 @@
-# Fix Unity Package Dependencies
+# Fix Unity Package Dependencies - RESOLVED
 
-Your Unity project has compilation errors because the packages are not properly resolved. Here's how to fix it:
+## Issue:
+The project had incompatible 2D package versions. `com.unity.2d.sprite` and `com.unity.2d.tilemap` were at version 1.0.0, which is incompatible with the newer 2D packages (animation, aseprite, etc. at version 12.x).
 
-## Steps to Fix:
+## Solution Applied:
+Updated `Packages/manifest.json` to use compatible versions:
+- `com.unity.2d.sprite`: 1.0.0 → 2.0.1
+- `com.unity.2d.tilemap`: 1.0.0 → 2.0.1
 
-1. **Open Unity Hub**
-2. **Open your AstroTour project in Unity**
-3. **Wait for Unity to resolve packages** - This may take a few minutes
-4. **If packages don't resolve automatically:**
-   - Go to Window > Package Manager
-   - Click the refresh button (circular arrow icon)
-   - Wait for all packages to download and install
+## Next Steps:
+1. **Close Unity if it's open**
+2. **Delete the package cache:**
+   ```bash
+   rm -rf Library/PackageCache
+   rm Packages/packages-lock.json
+   ```
+3. **Reopen Unity** - It will download the correct package versions
+4. **Wait for compilation** - The CS0234 errors should be gone
 
-## Missing Packages That Should Auto-Install:
-- TextMeshPro (com.unity.textmeshpro)
-- UI System (com.unity.ugui) 
-- Input System (com.unity.inputsystem)
-- Cinemachine (com.unity.cinemachine)
-- Visual Scripting (com.unity.visualscripting)
-
-## If Problems Persist:
-
-1. **Clear Package Cache:**
-   - Close Unity
-   - Delete Library/PackageCache folder
-   - Delete Packages/packages-lock.json file
-   - Reopen Unity
-
-2. **Manually Add Missing Packages:**
-   - Open Package Manager in Unity
-   - Click the "+" button
-   - Select "Add package by name"
-   - Add: com.unity.textmeshpro
-
-The compilation errors should disappear once Unity properly downloads and installs all the required packages.
+The `UnityEditor.U2D.Sprites` namespace will now be available in the updated packages.
