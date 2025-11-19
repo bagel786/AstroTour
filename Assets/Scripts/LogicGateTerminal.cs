@@ -4,14 +4,10 @@ public class LogicGateTerminal : MonoBehaviour, IInteractable
 {
     [Header("Terminal Configuration")]
     public string terminalName = "Quant Logic Gate Factory";
-    public string interactionPrompt = "Press E to access Logic Gate Factory";
+    public string terminalID = "logic_gate_terminal"; // Unique ID for quest system
     
     [Header("Game References")]
     public LogicGateController gameController;
-    
-    [Header("Quest Integration")]
-    public string questID = "logic_gate_challenge";
-    public string objectiveID = "complete_logic_gate_puzzle";
     
     private bool isCompleted = false;
     
@@ -21,43 +17,47 @@ public class LogicGateTerminal : MonoBehaviour, IInteractable
         {
             gameController = FindAnyObjectByType<LogicGateController>();
         }
-    }
-    
-    public string GetInteractionPrompt()
-    {
-        if (isCompleted)
+        
+        if (gameController == null)
         {
-            return "Press E to view completed Logic Gate Factory";
+            Debug.LogError("LogicGateTerminal: No LogicGateController found in scene!");
         }
-        return interactionPrompt;
     }
     
     public bool canInteract()
     {
-        // Can always interact - will show different states based on completion
+        Debug.Log("LogicGateTerminal: canInteract() called - returning true");
         return true;
     }
     
     public void Interact()
     {
+        Debug.Log($"LogicGateTerminal: Interact() called on {terminalName}");
+        
         if (gameController == null)
         {
             Debug.LogError("LogicGateTerminal: No LogicGateController found!");
             return;
         }
         
+        Debug.Log($"LogicGateTerminal: GameController found, isCompleted = {isCompleted}");
+        
+        // Pause game and show game panel
+        Debug.Log("LogicGateTerminal: Calling PauseController.SetPause(true)");
         PauseController.SetPause(true);
         
         if (isCompleted)
         {
+            Debug.Log("LogicGateTerminal: Game already completed, showing completed state");
             gameController.ShowCompletedState();
         }
         else
         {
+            Debug.Log("LogicGateTerminal: Starting new logic gate challenge");
             gameController.StartLogicGateChallenge();
         }
         
-        Debug.Log($"Interacted with {terminalName}");
+        Debug.Log($"LogicGateTerminal: Interaction complete for {terminalName}");
     }
     
     public void OnChallengeCompleted()
@@ -67,7 +67,7 @@ public class LogicGateTerminal : MonoBehaviour, IInteractable
         // Update quest progress using terminal ID
         if (QuestController.Instance != null)
         {
-            QuestController.Instance.CheckTerminalUnlock(questID);
+            QuestController.Instance.CheckTerminalUnlock(terminalID);
         }
         
         Debug.Log($"{terminalName} challenge completed!");
@@ -87,4 +87,5 @@ public class LogicGateTerminal : MonoBehaviour, IInteractable
             gameController.SetCompletionState(completed);
         }
     }
+    
 }

@@ -93,18 +93,23 @@ public class PlayerController2 : MonoBehaviour
     // Event callback for talk action
     private void OnTalkPerformed(InputAction.CallbackContext context)
     {
+        Debug.Log("PlayerController2: E key pressed");
+        
         // Don't process interactions when game is paused (e.g., console is open)
         if (PauseController.IsGamePaused)
         {
+            Debug.Log("PlayerController2: Game is paused, ignoring interaction");
             return;
         }
 
+        Debug.Log($"PlayerController2: Looking for interactables in direction {moveDirection}");
         FindFriend();
         FindSpaceShip();
         FindBox();
         // FindComputer();
         FindTerminal();
         FindMarketingTerminal();
+        FindLogicGateTerminal();
     }
     void FindBox()
     {
@@ -173,6 +178,44 @@ public class PlayerController2 : MonoBehaviour
 
                 marketingTerminal.Interact();
             }
+        }
+    }
+
+    void FindLogicGateTerminal()
+    {
+        Debug.Log("PlayerController2: Raycasting for LogicGateTerminal on Terminal layer");
+        RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, moveDirection, 1.5f, LayerMask.GetMask("Terminal"));
+        
+        if (hit.collider != null)
+        {
+            Debug.Log($"PlayerController2: Raycast hit {hit.collider.gameObject.name}");
+            LogicGateTerminal logicGateTerminal = hit.collider.GetComponent<LogicGateTerminal>();
+            if (logicGateTerminal != null)
+            {
+                Debug.Log("PlayerController2: Found LogicGateTerminal component");
+                if (logicGateTerminal.canInteract())
+                {
+                    Debug.Log("PlayerController2: LogicGateTerminal can interact, calling Interact()");
+                    // Force stop movement + reset animation
+                    move = Vector2.zero;
+                    animator.SetFloat("Speed", 0f);
+                    StopFootSteps();
+
+                    logicGateTerminal.Interact();
+                }
+                else
+                {
+                    Debug.Log("PlayerController2: LogicGateTerminal cannot interact");
+                }
+            }
+            else
+            {
+                Debug.Log($"PlayerController2: No LogicGateTerminal component on {hit.collider.gameObject.name}");
+            }
+        }
+        else
+        {
+            Debug.Log("PlayerController2: Raycast did not hit anything on Terminal layer");
         }
     }
 

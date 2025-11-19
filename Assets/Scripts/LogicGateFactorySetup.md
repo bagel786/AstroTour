@@ -50,10 +50,9 @@ Terminal to start the game (implements IInteractable).
    - **ScoreText** (TextMeshPro)
    - **TargetPatternText** (TextMeshPro)
    - **CloseButton** (Button)
-   - **ResetButton** (Button)
-   - **CompletionPanel** (Panel, initially inactive)
 
 ### Step 3: Create Circuit Slots
+
 1. Create a Panel named "CircuitSlotsContainer"
 2. Add 4-6 empty GameObjects as children, each with:
    - **GateSlot.cs** component
@@ -96,15 +95,16 @@ Gate 6: Type "NORM", Display "Normalizer"
    - Drag all GateSlots to `circuitSlots` array
    - Drag all LogicGates to `availableGates` array
    - Set `targetOutputPattern` (e.g., [1, 1, 1, 0])
-   - Assign UI references
-   - Set `allowFatTailReset` to true for hard mode
+   - Assign UI references (gamePanel, instructionText, scoreText, targetPatternText, closeButton)
+   - Set `allowFatTailReset` to true for hard mode (wrong placement triggers reset)
 
 ### Step 6: Create Terminal
 1. Create a 3D object (Cube/Plane) in your scene
 2. Add **LogicGateTerminal.cs** component
-3. Add **BoxCollider** (set as trigger)
+3. Add **BoxCollider** (NOT a trigger - player will raycast to find it)
 4. Assign `gameController` reference
 5. Set quest IDs if using quest system
+6. Player presses E to interact (Player2Controller will raycast to detect)
 
 ### Step 7: Configure Colors
 Set visual feedback colors in Inspector:
@@ -112,31 +112,43 @@ Set visual feedback colors in Inspector:
 - **Correct Color**: Green (0, 1, 0)
 - **Incorrect Color**: Red (1, 0, 0)
 
+## Game Flow
+
+1. Player approaches terminal and presses E
+2. Game panel opens showing:
+   - **Input signals** (e.g., "In: 0,1" or "In: 1")
+   - **Expected output** (e.g., "Target: 1")
+   - **Available gates** to drag
+3. Player drags the correct gate to the slot
+4. If correct: gate turns green, output matches target
+5. If incorrect: gate turns red, triggers fat-tail event (circuit resets)
+6. Complete all slots to finish the puzzle
+
 ## Logic Gate Behaviors
 
 ### AND Gate
 - Output: 1 only if both inputs are 1
-- Example: [1,1] → 1, [1,0] → 0
+- Example: Input [1,1] → Output 1, Input [1,0] → Output 0
 
 ### OR Gate
 - Output: 1 if either input is 1
-- Example: [0,1] → 1, [0,0] → 0
+- Example: Input [0,1] → Output 1, Input [0,0] → Output 0
 
 ### XOR Gate (Volatility)
 - Output: 1 if inputs are different
-- Example: [0,1] → 1, [1,1] → 0
+- Example: Input [0,1] → Output 1, Input [1,1] → Output 0
 
 ### NOT Gate
 - Output: Inverts first input
-- Example: [1] → 0, [0] → 1
+- Example: Input [1] → Output 0, Input [0] → Output 1
 
-### SUM Gate (Aggregator)
+### SUM Gate (Σ-Aggregator)
 - Output: Sum of inputs
-- Example: [1,1] → 2, [0,1] → 1
+- Example: Input [1,1] → Output 2, Input [0,1] → Output 1
 
 ### NORM Gate (Normalizer)
 - Output: 1 if sum > 0, else 0
-- Example: [1,1] → 1, [0,0] → 0
+- Example: Input [1,1] → Output 1, Input [0,0] → Output 0
 
 ## Fat-Tail Event Feature
 When `allowFatTailReset` is enabled:

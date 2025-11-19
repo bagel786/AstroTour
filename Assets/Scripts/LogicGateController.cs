@@ -11,12 +11,10 @@ public class LogicGateController : MonoBehaviour
     
     [Header("UI References")]
     public GameObject gamePanel;
-    public GameObject completionPanel;
     public TMP_Text instructionText;
     public TMP_Text scoreText;
     public TMP_Text targetPatternText;
     public Button closeButton;
-    public Button resetButton;
     
     [Header("Game Settings")]
     public int[] targetOutputPattern; // Expected outputs for each slot
@@ -41,19 +39,27 @@ public class LogicGateController : MonoBehaviour
     
     private void InitializeGame()
     {
+        Debug.Log("LogicGateController: InitializeGame() called");
+        
         if (circuitSlots.Length == 0)
         {
-            circuitSlots = FindObjectsByType<GateSlot>(FindObjectsSortMode.None);
+            Debug.Log("LogicGateController: No circuit slots assigned, finding them...");
+            circuitSlots = FindObjectsByType<GateSlot>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            Debug.Log($"LogicGateController: Found {circuitSlots.Length} circuit slots");
         }
         
         if (availableGates.Length == 0)
         {
-            availableGates = FindObjectsByType<LogicGate>(FindObjectsSortMode.None);
+            Debug.Log("LogicGateController: No available gates assigned, finding them...");
+            availableGates = FindObjectsByType<LogicGate>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            Debug.Log($"LogicGateController: Found {availableGates.Length} available gates");
         }
         
         // Set expected outputs for each slot
+        Debug.Log($"LogicGateController: Setting expected outputs. Slots: {circuitSlots.Length}, Pattern length: {targetOutputPattern.Length}");
         for (int i = 0; i < circuitSlots.Length && i < targetOutputPattern.Length; i++)
         {
+            Debug.Log($"LogicGateController: Slot {i} expected output: {targetOutputPattern[i]}");
             circuitSlots[i].SetExpectedOutput(targetOutputPattern[i]);
         }
         
@@ -77,10 +83,19 @@ public class LogicGateController : MonoBehaviour
             correctPlacements = 0;
         }
         
-        if (gamePanel != null) gamePanel.SetActive(true);
-        if (completionPanel != null) completionPanel.SetActive(false);
+        Debug.Log($"LogicGateController: Game panel is {(gamePanel != null ? "assigned" : "NOT assigned")}");
+        if (gamePanel != null)
+        {
+            Debug.Log("LogicGateController: Activating game panel");
+            gamePanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("LogicGateController: Game panel is null! UI will not show!");
+        }
         
         UpdateUI();
+        Debug.Log("LogicGateController: InitializeGame() complete");
     }
     
     private void SetupUI()
@@ -105,11 +120,6 @@ public class LogicGateController : MonoBehaviour
         if (closeButton != null)
         {
             closeButton.onClick.AddListener(CloseGame);
-        }
-        
-        if (resetButton != null)
-        {
-            resetButton.onClick.AddListener(ResetCircuit);
         }
         
         UpdateUI();
@@ -189,11 +199,6 @@ public class LogicGateController : MonoBehaviour
     
     private void ShowCompletionScreen()
     {
-        if (completionPanel != null)
-        {
-            completionPanel.SetActive(true);
-        }
-        
         Debug.Log($"Logic Gate Challenge Complete! Scored {currentScore} points.");
     }
     
@@ -251,7 +256,6 @@ public class LogicGateController : MonoBehaviour
     public void CloseGame()
     {
         if (gamePanel != null) gamePanel.SetActive(false);
-        if (completionPanel != null) completionPanel.SetActive(false);
         
         if (DialogueController.Instance != null)
         {
@@ -273,8 +277,11 @@ public class LogicGateController : MonoBehaviour
     
     public void StartLogicGateChallenge()
     {
+        Debug.Log("LogicGateController: StartLogicGateChallenge() called");
+        
         if (!gameCompleted)
         {
+            Debug.Log("LogicGateController: Game not completed, initializing...");
             InitializeGame();
             Debug.Log("Logic Gate Challenge started!");
         }
@@ -345,11 +352,6 @@ public class LogicGateController : MonoBehaviour
         if (instructionText != null)
         {
             instructionText.text = "Challenge Already Completed! Target distribution achieved.";
-        }
-        
-        if (completionPanel != null)
-        {
-            completionPanel.SetActive(true);
         }
         
         SetInteractionEnabled(false);
