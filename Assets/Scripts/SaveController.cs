@@ -17,6 +17,7 @@ public class SaveController : MonoBehaviour
     private SimpleConsolePassword[] terminals;
     private MarketingTerminal[] marketingTerminals;
     private SimpleDNASequencingTerminal[] dnaTerminals;
+    private LogicGateTerminal[] logicGateTerminals;
 
     // Start is called before the first frame update
     void Start()
@@ -67,10 +68,11 @@ public class SaveController : MonoBehaviour
         terminals = FindObjectsByType<SimpleConsolePassword>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         marketingTerminals = FindObjectsByType<MarketingTerminal>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         dnaTerminals = FindObjectsByType<SimpleDNASequencingTerminal>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        logicGateTerminals = FindObjectsByType<LogicGateTerminal>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         
 
         
-        Debug.Log($"SaveController initialized: Found {boxes?.Length ?? 0} boxes, {terminals?.Length ?? 0} password terminals, {marketingTerminals?.Length ?? 0} marketing terminals, and {dnaTerminals?.Length ?? 0} DNA terminals");
+        Debug.Log($"SaveController initialized: Found {boxes?.Length ?? 0} boxes, {terminals?.Length ?? 0} password terminals, {marketingTerminals?.Length ?? 0} marketing terminals, {dnaTerminals?.Length ?? 0} DNA terminals, and {logicGateTerminals?.Length ?? 0} logic gate terminals");
     }
 
     public void SaveGame()
@@ -146,6 +148,15 @@ public class SaveController : MonoBehaviour
             if (dnaTerminal != null)
             {
                 terminalStates.Add(dnaTerminal.GetSaveData());
+            }
+        }
+        
+        // Save logic gate terminals
+        foreach (LogicGateTerminal logicGateTerminal in logicGateTerminals)
+        {
+            if (logicGateTerminal != null)
+            {
+                terminalStates.Add(logicGateTerminal.GetSaveData());
             }
         }
         
@@ -351,6 +362,19 @@ public class SaveController : MonoBehaviour
                 if (terminalSaveData != null)
                 {
                     dnaTerminal.LoadSaveData(terminalSaveData);
+                }
+            }
+        }
+        
+        // Load logic gate terminals
+        foreach (LogicGateTerminal logicGateTerminal in logicGateTerminals)
+        {
+            if (logicGateTerminal != null)
+            {
+                TerminalSaveData terminalSaveData = terminalStates.FirstOrDefault(t => t.terminalID == logicGateTerminal.TerminalID);
+                if (terminalSaveData != null)
+                {
+                    logicGateTerminal.LoadSaveData(terminalSaveData);
                 }
             }
         }

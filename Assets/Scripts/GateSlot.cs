@@ -5,12 +5,10 @@ using TMPro;
 public class GateSlot : MonoBehaviour
 {
     [Header("Slot Configuration")]
-    public string slotName;
     public string[] acceptedGateTypes; // Can accept multiple gate types
     public int[] inputSignals = new int[2]; // Binary inputs [0,1]
     
     [Header("UI References")]
-    public TMP_Text slotLabel;
     public TMP_Text inputDisplay;
     public TMP_Text outputDisplay;
     public Image slotBackground;
@@ -26,11 +24,6 @@ public class GateSlot : MonoBehaviour
     
     void Start()
     {
-        if (slotLabel != null)
-        {
-            slotLabel.text = slotName;
-        }
-        
         UpdateInputDisplay();
         SetSlotColor(emptyColor);
     }
@@ -53,27 +46,36 @@ public class GateSlot : MonoBehaviour
     
     public void SetGate(LogicGate gate)
     {
+        // Calculate output before placing
+        int output = TestGateOutput(gate.GetGateType());
+        bool isCorrect = (expectedOutput == -1) || (output == expectedOutput);
+        
+        // If wrong gate, reject it
+        if (!isCorrect)
+        {
+            Debug.Log($"GateSlot: Rejecting {gate.GetGateType()} gate - produces {output}, expected {expectedOutput}");
+            gate.ShowIncorrectFeedback();
+            SoundEffectManager.Play("logic_gate_error");
+            return;
+        }
+        
+        // Correct gate - place and lock it
         currentGate = gate;
         hasGate = true;
         gate.SetPlaced(true);
         
-        // Calculate output
-        int output = CalculateOutput();
         UpdateOutputDisplay(output);
+        SetSlotColor(correctColor);
+        currentGate.ShowCorrectFeedback();
         
-        // Check if correct
-        bool isCorrect = (expectedOutput == -1) || (output == expectedOutput);
+        // Lock the gate so it can't be dragged out
+        LogicGateDragHandler dragHandler = gate.GetComponent<LogicGateDragHandler>();
+        if (dragHandler != null)
+        {
+            dragHandler.SetDraggable(false);
+        }
         
-        if (isCorrect)
-        {
-            SetSlotColor(correctColor);
-            currentGate.ShowCorrectFeedback();
-        }
-        else
-        {
-            SetSlotColor(incorrectColor);
-            currentGate.ShowIncorrectFeedback();
-        }
+        Debug.Log($"GateSlot: Accepted and locked {gate.GetGateType()} gate");
         
         // Notify controller
         LogicGateController controller = FindAnyObjectByType<LogicGateController>();
@@ -88,6 +90,13 @@ public class GateSlot : MonoBehaviour
         if (currentGate != null)
         {
             currentGate.ResetAppearance();
+            
+            // Re-enable dragging when removed (for reset scenarios)
+            LogicGateDragHandler dragHandler = currentGate.GetComponent<LogicGateDragHandler>();
+            if (dragHandler != null)
+            {
+                dragHandler.SetDraggable(true);
+            }
         }
         
         currentGate = null;
@@ -112,26 +121,7 @@ public class GateSlot : MonoBehaviour
         if (currentGate == null) return -1;
         
         string gateType = currentGate.GetGateType();
-        int a = inputSignals.Length > 0 ? inputSignals[0] : 0;
-        int b = inputSignals.Length > 1 ? inputSignals[1] : 0;
-        
-        switch (gateType)
-        {
-            case "AND":
-                return (a == 1 && b == 1) ? 1 : 0;
-            case "OR":
-                return (a == 1 || b == 1) ? 1 : 0;
-            case "XOR":
-                return (a != b) ? 1 : 0;
-            case "NOT":
-                return (a == 1) ? 0 : 1;
-            case "SUM":
-                return a + b; // For aggregation
-            case "NORM":
-                return (a + b > 0) ? 1 : 0; // Normalization
-            default:
-                return 0;
-        }
+        return TestGateOutput(gateType);
     }
     
     public bool HasCorrectGate()
@@ -221,7 +211,7 @@ public class GateSlot : MonoBehaviour
         }
     }
     
-    private int TestGateOutput(string gateType)
+    public int TestGateOutput(string gateType)
     {
         int a = inputSignals.Length > 0 ? inputSignals[0] : 0;
         int b = inputSignals.Length > 1 ? inputSignals[1] : 0;
@@ -230,7 +220,10 @@ public class GateSlot : MonoBehaviour
         {
             case "AND": return (a == 1 && b == 1) ? 1 : 0;
             case "OR": return (a == 1 || b == 1) ? 1 : 0;
+            case "NOR": return (a == 0 && b == 0) ? 1 : 0; // NOR: opposite of OR
+            case "NAND": return (a == 1 && b == 1) ? 0 : 1; // NAND: opposite of AND
             case "XOR": return (a != b) ? 1 : 0;
+            case "XNOR": return (a == b) ? 1 : 0; // XNOR: opposite of XOR
             case "NOT": return (a == 1) ? 0 : 1;
             case "SUM": return a + b;
             case "NORM": return (a + b > 0) ? 1 : 0;

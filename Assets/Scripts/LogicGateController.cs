@@ -39,27 +39,19 @@ public class LogicGateController : MonoBehaviour
     
     private void InitializeGame()
     {
-        Debug.Log("LogicGateController: InitializeGame() called");
-        
         if (circuitSlots.Length == 0)
         {
-            Debug.Log("LogicGateController: No circuit slots assigned, finding them...");
             circuitSlots = FindObjectsByType<GateSlot>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-            Debug.Log($"LogicGateController: Found {circuitSlots.Length} circuit slots");
         }
         
         if (availableGates.Length == 0)
         {
-            Debug.Log("LogicGateController: No available gates assigned, finding them...");
             availableGates = FindObjectsByType<LogicGate>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-            Debug.Log($"LogicGateController: Found {availableGates.Length} available gates");
         }
         
         // Set expected outputs for each slot
-        Debug.Log($"LogicGateController: Setting expected outputs. Slots: {circuitSlots.Length}, Pattern length: {targetOutputPattern.Length}");
         for (int i = 0; i < circuitSlots.Length && i < targetOutputPattern.Length; i++)
         {
-            Debug.Log($"LogicGateController: Slot {i} expected output: {targetOutputPattern[i]}");
             circuitSlots[i].SetExpectedOutput(targetOutputPattern[i]);
         }
         
@@ -83,19 +75,12 @@ public class LogicGateController : MonoBehaviour
             correctPlacements = 0;
         }
         
-        Debug.Log($"LogicGateController: Game panel is {(gamePanel != null ? "assigned" : "NOT assigned")}");
         if (gamePanel != null)
         {
-            Debug.Log("LogicGateController: Activating game panel");
             gamePanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("LogicGateController: Game panel is null! UI will not show!");
         }
         
         UpdateUI();
-        Debug.Log("LogicGateController: InitializeGame() complete");
     }
     
     private void SetupUI()
@@ -149,6 +134,7 @@ public class LogicGateController : MonoBehaviour
             }
         }
         
+        // Calculate score based on correct placements
         currentScore = correctPlacements * pointsPerCorrectGate;
         UpdateUI();
         
@@ -204,21 +190,18 @@ public class LogicGateController : MonoBehaviour
     
     private void CompleteLogicGateQuest()
     {
+        // Notify terminal of completion
         LogicGateTerminal terminal = FindAnyObjectByType<LogicGateTerminal>();
         if (terminal != null)
         {
             terminal.OnChallengeCompleted();
         }
-        
-        GiveCompletionReward();
-    }
-    
-    private void GiveCompletionReward()
-    {
-        if (DialogueRewardManager.Instance != null)
+        else
         {
-            Debug.Log($"LogicGateController: Player earned {currentScore} points!");
+            Debug.LogWarning("LogicGateController: No LogicGateTerminal found to notify of completion!");
         }
+        
+        Debug.Log($"LogicGateController: Challenge completed with score {currentScore}");
     }
     
     public void ResetCircuit()
@@ -277,17 +260,9 @@ public class LogicGateController : MonoBehaviour
     
     public void StartLogicGateChallenge()
     {
-        Debug.Log("LogicGateController: StartLogicGateChallenge() called");
-        
         if (!gameCompleted)
         {
-            Debug.Log("LogicGateController: Game not completed, initializing...");
             InitializeGame();
-            Debug.Log("Logic Gate Challenge started!");
-        }
-        else
-        {
-            Debug.Log("Logic Gate Challenge already completed.");
         }
     }
     
@@ -326,6 +301,8 @@ public class LogicGateController : MonoBehaviour
             correctPlacements = 0;
             currentScore = 0;
         }
+        
+        UpdateUI();
     }
     
     public void ShowCompletedState()
