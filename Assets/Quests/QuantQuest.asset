@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: QuantQuest
   m_EditorClassIdentifier: Assembly-CSharp::Quest
   questName: Quant Conundrum!
-  description: Collect five tokens!
+  description: Collect machine parts!
   questId: ce9853a7-b108-4c36-9c65-4d7411f40f5f
   objectives:
-  - objectiveID: 
-    description: 
+  - objectiveID: 11
+    description: Collect five Machine Parts!
     type: 0
-    requiredAmount: 0
+    requiredAmount: 5
     currentAmount: 0
-    acceptableItemIDs: 
+    acceptableItemIDs: 0b000000
   questRewards: []

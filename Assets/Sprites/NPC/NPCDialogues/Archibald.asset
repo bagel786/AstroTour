@@ -21,16 +21,43 @@ MonoBehaviour:
   - Ah, but I'm getting carried away. I know what you're here for!
   - Mr. Jogglepuff sent you to do research correct?
   - Are you willing to begin now, or will you wait and risk a loss?
-  autoProgressLines: 
-  endDialogueLines: 
+  - Well, that's okay, but remember, stuff changes fast, so if you change your mind,
+    hurry!
+  - Perfect! To prove your skill, I'll need you to collect five machine parts by
+    completing various tasks!
+  - The first floor will be the main office area, the second floor will be the meeting
+    room, and the last is the boss' office!
+  - Good luck!
+  - Have you found all the machine parts yet?
+  - I see you've found all the machine parts I asked you to find!
+  - Really good job, you would definitely be cut out for the quant world!
+  - Here, take this Sigma badge as proof of your excellence!
+  - Have a great day!
+  - I often take breaks while working here, since we're so isolated.
+  autoProgressLines: 01010101010100010100000101010000
+  endDialogueLines: 00000000000001000001010000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
   voicePitch: 1
   voicePerCharacter: 1
-  choices: []
-  questInProgressIndex: 0
-  questCompletedIndex: 0
-  quest: {fileID: 0}
-  itemRewards: []
-  itemRewardsGivenIndex: -1
+  choices:
+  - dialogueIndex: 5
+    choices:
+    - yes
+    - no
+    nextDialogueIndexes: 0700000006000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 10
+  questCompletedIndex: 11
+  quest: {fileID: 11400000, guid: fc8ce67a6bbbf484e8cb234414b4bd33, type: 2}
+  itemRewards:
+  - itemID: 10
+    quantity: 1
+    dialogueIndex: 14
+    canGiveMultipleTimes: 0
+    uniqueRewardID: quant_reward_badge
+  itemRewardsGivenIndex: 16

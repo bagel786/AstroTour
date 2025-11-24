@@ -8335,7 +8335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ca5dc0bc04c3a83439f98b5fc13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LabNPC
-  dialogueData: {fileID: 0}
+  dialogueData: {fileID: 11400000, guid: b9debdc6ab4364dd3bbd5d054c3d263f, type: 2}
   closeButton: {fileID: 809176763}
 --- !u!1 &589721321
 GameObject:
@@ -88083,7 +88083,7 @@ Transform:
   m_GameObject: {fileID: 1145189215}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.52488, y: -8.079289, z: -10}
+  m_LocalPosition: {x: 8.189355, y: -8.08165, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96547,6 +96547,7 @@ MonoBehaviour:
   - {fileID: 1195906875890892332, guid: fed0efe8a51bd44d99147b5fa423a250, type: 3}
   - {fileID: 9162747137852576487, guid: cecd89f32481a46b7832a5f37f9e206a, type: 3}
   - {fileID: 4061116557272881314, guid: 9667c69ad64e54ae59c53797bf87d9ed, type: 3}
+  - {fileID: 7915944286397884146, guid: 18fcc6b24a6f64f7a98e3bc9f3bd6bf0, type: 3}
 --- !u!4 &1587945527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 99138694744008208, guid: 49e3534f0f29446759c81e6728327681, type: 3}
