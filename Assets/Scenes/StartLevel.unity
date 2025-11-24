@@ -4584,6 +4584,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1358916890175713684, guid: afde5bb4eeb4f48e8af869e40032ee28, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 6682536141406997939, guid: 18fcc6b24a6f64f7a98e3bc9f3bd6bf0, type: 3}
     - target: {fileID: 3633090171523241276, guid: afde5bb4eeb4f48e8af869e40032ee28, type: 3}
       propertyPath: m_Name
       value: Box
@@ -90098,13 +90102,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8522239379093222495, guid: b3f9a17c997a545f2b11eb376ef7552b, type: 3}
       propertyPath: m_Name
-      value: Jack
+      value: Matthew
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8522239379093222495, guid: b3f9a17c997a545f2b11eb376ef7552b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1263885287}
   m_SourcePrefab: {fileID: 100100000, guid: b3f9a17c997a545f2b11eb376ef7552b, type: 3}
+--- !u!1 &1263885286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8522239379093222495, guid: b3f9a17c997a545f2b11eb376ef7552b, type: 3}
+  m_PrefabInstance: {fileID: 1263885285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263885287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263885286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722ca5dc0bc04c3a83439f98b5fc13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LabNPC
+  dialogueData: {fileID: 11400000, guid: 5a589f7129c06470db1dba31e647d69a, type: 2}
+  closeButton: {fileID: 809176763}
 --- !u!1 &1278204211
 GameObject:
   m_ObjectHideFlags: 0

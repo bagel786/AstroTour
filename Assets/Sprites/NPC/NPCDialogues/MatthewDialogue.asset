@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: MatthewDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Matthew
+  npcPortrait: {fileID: 773414749780464388, guid: e7e34bcdb34b44ea6a804d1d6ed2008a, type: 3}
+  dialogueLines:
+  - Hey! My name is matthew, and I'm the lead quant developer here!
+  - Quants work with these things called logic gates, to perform lots of calculations
+    simultataneously!
+  - Since the financial markets change rapidly, we need to be able to calculate multiple
+    permutations really fast!
+  - There are a variety of different gates, so I'll give you details about a coupleo
+    of them.
+  - the AND gate returns true if both inputs are true.
+  - In binary, 1 means 'on' or true, and 0 is the opposite!
+  - The OR gate is similar but returns true if either of the inputs are true.
+  - And there's a couple others, but they're pretty straightforward and I don't have
+    the time to explain them all.
+  - You ready to try it out yourself?
+  - Ah, well that's okay, but its always worth a shot!
+  - Awesome sauce! I need you to go to that computer and complete all the logic gates!
+  - We use those for our calculations.
+  - If you need help, try talking to others, they may give you some help!
+  - Good luck!
+  - I see you've completed all the logic gates!
+  - Wasn't that fun!?
+  - Anyways, good work out there. Here, take this machine part!
+  - Catch ya later man!
+  - I haven't seen my family in 5 years...
+  autoProgressLines: 01010101010101010100010101000101010000
+  endDialogueLines: 00000000000000000001000000010000000101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices:
+  - dialogueIndex: 8
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0a00000009000000
+    onChoiceEvents: []
+    shouldTeleport: 
+    waypointNames: []
+    givesQuest: 01
+  questInProgressIndex: 13
+  questCompletedIndex: 14
+  quest: {fileID: 11400000, guid: 03f2b2eb9e5bc43108d35f588b6f50c3, type: 2}
+  itemRewards:
+  - itemID: 11
+    quantity: 1
+    dialogueIndex: 16
+    canGiveMultipleTimes: 0
+    uniqueRewardID: gate_galore_reward
+  itemRewardsGivenIndex: 18
