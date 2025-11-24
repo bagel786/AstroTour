@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
-  m_Name: FakharDialogue
+  m_Name: Archibald
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Fakhar
-  npcPortrait: {fileID: 2529050679412419844, guid: acb2df127143a4c7b8b8485407d18036, type: 3}
+  npcName: Archibald
+  npcPortrait: {fileID: 3054239853776531927, guid: 6cc4b139363494aa398d1c4ff600ed66, type: 3}
   dialogueLines:
-  - Welcome! My name is Fakhar, and I'm the manager of the space systems here at
-    Quantopolis!
-  - Quantopolis is a bustling financial district located in the heart of a massive
-    canyon, so it's pretty isolated.
-  - Most people who live here either work in quant, with the exception being me!
-  autoProgressLines: 010100
-  endDialogueLines: 000001
+  - Welcome to the heart of Quantopolis!
+  - Here, our professional team of quants analyze financial markets and trading strategies!
+  - We pride ourselves on doing a great job with everything we do!
+  - Ah, but I'm getting carried away. I know what you're here for!
+  - Mr. Jogglepuff sent you to do research correct?
+  - Are you willing to begin now, or will you wait and risk a loss?
+  autoProgressLines: 
+  endDialogueLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}

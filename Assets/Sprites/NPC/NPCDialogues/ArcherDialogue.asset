@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
   m_Name: ArcherDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: 
-  npcPortrait: {fileID: 0}
-  dialogueLines: []
-  autoProgressLines: 
-  endDialogueLines: 
+  npcName: Archer
+  npcPortrait: {fileID: -2273513340186137624, guid: 6315319d4deab463cbb77fd4a4048f3a, type: 3}
+  dialogueLines:
+  - If anyone has told you that only quants work here, they're lying to ya!
+  - A small little group of us archaeologists live here, studying the canyons.
+  - They're actually a really fascinating study on the formation of rock layers!
+  autoProgressLines: 010100
+  endDialogueLines: 000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 0}
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
   voicePitch: 1
-  voicePerCharacter: 0
+  voicePerCharacter: 1
   choices: []
   questInProgressIndex: 0
   questCompletedIndex: 0
