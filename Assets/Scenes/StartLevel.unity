@@ -1430,8 +1430,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5395048268328323967, guid: db64e3967e91a4889996469790800dfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 116049889}
   m_SourcePrefab: {fileID: 100100000, guid: db64e3967e91a4889996469790800dfb, type: 3}
+--- !u!1 &116049888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5395048268328323967, guid: db64e3967e91a4889996469790800dfb, type: 3}
+  m_PrefabInstance: {fileID: 116049887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &116049889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116049888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722ca5dc0bc04c3a83439f98b5fc13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LabNPC
+  dialogueData: {fileID: 11400000, guid: 175a1f5ed6a8d4f14b43b180e5bca227, type: 2}
+  closeButton: {fileID: 809176763}
 --- !u!1 &117188821
 GameObject:
   m_ObjectHideFlags: 0
@@ -88144,7 +88166,7 @@ Transform:
   m_GameObject: {fileID: 1145189215}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.189355, y: -8.08165, z: -10}
+  m_LocalPosition: {x: 8.52488, y: -8.079289, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106133,6 +106155,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4150579475978373202, guid: 40ad55bd2197d4ba7bac7f797406061d, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 4150579475978373202, guid: 40ad55bd2197d4ba7bac7f797406061d, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: f8173b3188d2f4f7989afd59e4da71a8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
