@@ -95732,6 +95732,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1162902542267572573, guid: 989d02d1c4d9344229410702a2150bef, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 1162902542267572573, guid: 989d02d1c4d9344229410702a2150bef, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: cb4f7fa5c2dff47f880c3be01d4c35c0, type: 2}
     - target: {fileID: 4571066670332962818, guid: 989d02d1c4d9344229410702a2150bef, type: 3}
       propertyPath: m_Name
       value: Kevin
@@ -107294,7 +107302,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439958064714720564, guid: 503718925da894d22948d24bc0747a06, type: 3}
       propertyPath: m_Name
-      value: norman
+      value: Robbie
       objectReference: {fileID: 0}
     - target: {fileID: 7791452682939484081, guid: 503718925da894d22948d24bc0747a06, type: 3}
       propertyPath: m_LocalPosition.x
@@ -107336,6 +107344,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8492663076435827857, guid: 503718925da894d22948d24bc0747a06, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 8492663076435827857, guid: 503718925da894d22948d24bc0747a06, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 62b3fd826a9044d20aa944c921addde9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

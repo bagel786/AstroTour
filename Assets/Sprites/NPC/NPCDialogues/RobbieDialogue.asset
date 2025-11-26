@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb6eadcebc14f9fb8dd7dd3cd71c95, type: 3}
+  m_Name: RobbieDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Robbie
+  npcPortrait: {fileID: 9037558639979120132, guid: 8dea659ca947649c29ee5d11e959d8de, type: 3}
+  dialogueLines:
+  - See this balding kid?
+  - The quant world is difficult work, and not everyone's cut out for it.
+  - We work painfully long hours, and are always on the job.
+  - Its not just busy work either, we really gotta put 110% of effort into this stuff.
+  - Of course, the pay is excellent, so if you think its worth it, then go for it!
+  - I personally enjoy it very much!
+  autoProgressLines: 010101010100
+  endDialogueLines: 000000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
+  voicePitch: 1
+  voicePerCharacter: 1
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  itemRewards: []
+  itemRewardsGivenIndex: -1
