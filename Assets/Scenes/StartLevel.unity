@@ -93251,8 +93251,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287397442064761675, guid: deb0354e29a7b406a9f2de55ec814048, type: 3}
       propertyPath: m_Name
-      value: Biz Ness
+      value: Binga
       objectReference: {fileID: 0}
+    - target: {fileID: 7470150846657291458, guid: deb0354e29a7b406a9f2de55ec814048, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 7470150846657291458, guid: deb0354e29a7b406a9f2de55ec814048, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e865542d03404e8787b582a8311b705, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
