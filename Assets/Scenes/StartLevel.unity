@@ -103458,6 +103458,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3010877315068341090, guid: 8aa1a4aad134c4ba897d727ade7d7420, type: 3}
+      propertyPath: m_Size.y
+      value: 75.10086
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010877315068341090, guid: 8aa1a4aad134c4ba897d727ade7d7420, type: 3}
+      propertyPath: m_Offset.y
+      value: -27.487938
+      objectReference: {fileID: 0}
     - target: {fileID: 4812009793049734015, guid: 8aa1a4aad134c4ba897d727ade7d7420, type: 3}
       propertyPath: m_LocalPosition.x
       value: 144.33403
@@ -103502,6 +103510,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: juan
       objectReference: {fileID: 0}
+    - target: {fileID: 9139531152579485181, guid: 8aa1a4aad134c4ba897d727ade7d7420, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 9139531152579485181, guid: 8aa1a4aad134c4ba897d727ade7d7420, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 35744b190fa0746e28cd006f73579c20, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -106477,6 +106493,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8481978441690697053, guid: 1889a578a4a80482e9579d98c3517570, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 8481978441690697053, guid: 1889a578a4a80482e9579d98c3517570, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a36f158d3f0c48bf98f79520a1d89d8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107600,6 +107624,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4666993195887196163, guid: fc1117ff472264e7bba444e08717a1b7, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 809176763}
+    - target: {fileID: 4666993195887196163, guid: fc1117ff472264e7bba444e08717a1b7, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d3d4e046adf94e0d86f1100c85a28a1, type: 2}
     - target: {fileID: 7777990131711217931, guid: fc1117ff472264e7bba444e08717a1b7, type: 3}
       propertyPath: m_Name
       value: flannery
