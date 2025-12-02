@@ -21,14 +21,18 @@ public class MapTransition : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (confiner != null && mapBoundary != null)
+            // Start transition with loading screen
+            TransitionLoadingScreen.Instance.StartTransition(() =>
             {
-                confiner.BoundingShape2D = mapBoundary;
-            }
-            UpdatePlayerPosition(collision.gameObject);
-            
-            // Clean up duplicate EventSystems after area transition
-            EventSystemManager.CleanupDuplicateEventSystems();
+                if (confiner != null && mapBoundary != null)
+                {
+                    confiner.BoundingShape2D = mapBoundary;
+                }
+                UpdatePlayerPosition(collision.gameObject);
+                
+                // Clean up duplicate EventSystems after area transition
+                EventSystemManager.CleanupDuplicateEventSystems();
+            });
         }
     }
 
@@ -69,14 +73,18 @@ public class MapTransition : MonoBehaviour
             return;
         }
 
-        // Move player to waypoint
-        player.transform.position = waypoint.position;
-
-        // Update confiner if assigned
-        if (confiner != null && mapBoundary != null)
+        // Start transition with loading screen
+        TransitionLoadingScreen.Instance.StartTransition(() =>
         {
-            confiner.BoundingShape2D = mapBoundary;
-        }
+            // Move player to waypoint
+            player.transform.position = waypoint.position;
+
+            // Update confiner if assigned
+            if (confiner != null && mapBoundary != null)
+            {
+                confiner.BoundingShape2D = mapBoundary;
+            }
+        });
     }
 
     // New method that works with the WaypointTeleportManager
@@ -89,22 +97,26 @@ public class MapTransition : MonoBehaviour
             return;
         }
 
-        // Stop player movement
-        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        if (playerRb != null)
+        // Start transition with loading screen
+        TransitionLoadingScreen.Instance.StartTransition(() =>
         {
-            playerRb.linearVelocity = Vector2.zero;
-        }
+            // Stop player movement
+            Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerRb.linearVelocity = Vector2.zero;
+            }
 
-        // Move player to this transition point
-        player.transform.position = transform.position;
+            // Move player to this transition point
+            player.transform.position = transform.position;
 
-        // Update confiner
-        if (confiner != null && mapBoundary != null)
-        {
-            Debug.Log($"Updating camera boundary to: {mapBoundary.name}");
-            confiner.BoundingShape2D = mapBoundary;
-        }
+            // Update confiner
+            if (confiner != null && mapBoundary != null)
+            {
+                Debug.Log($"Updating camera boundary to: {mapBoundary.name}");
+                confiner.BoundingShape2D = mapBoundary;
+            }
+        });
     }
 
     // Method that can be called from dialogue choices with waypoint name

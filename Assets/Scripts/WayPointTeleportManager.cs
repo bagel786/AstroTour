@@ -167,35 +167,39 @@ public class WaypointTeleportManager : MonoBehaviour
             if (playerTransform == null) return;
         }
 
-        Rigidbody2D rb = playerTransform.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.linearVelocity = Vector2.zero;
-
-        playerTransform.position = entry.position;
-
-        if (confiner != null && entry.mapBoundary != null)
+        // Start transition with loading screen
+        TransitionLoadingScreen.Instance.StartTransition(() =>
         {
-            confiner.BoundingShape2D = entry.mapBoundary;
-            confiner.InvalidateBoundingShapeCache();
-        }
+            Rigidbody2D rb = playerTransform.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.linearVelocity = Vector2.zero;
 
-        CinemachineCamera vcam = FindFirstObjectByType<CinemachineCamera>();
-        if (vcam != null)
-        {
-            vcam.Follow = playerTransform;
-            vcam.PreviousStateIsValid = false;
-        }
+            playerTransform.position = entry.position;
 
-        if (entry.setPlayerDirection)
-        {
-            Animator animator = playerTransform.GetComponent<Animator>();
-            if (animator != null)
+            if (confiner != null && entry.mapBoundary != null)
             {
-                animator.SetFloat("Look X", entry.playerDirection.x);
-                animator.SetFloat("Look Y", entry.playerDirection.y);
+                confiner.BoundingShape2D = entry.mapBoundary;
+                confiner.InvalidateBoundingShapeCache();
             }
-        }
 
-        SnapCameraToPlayer();
+            CinemachineCamera vcam = FindFirstObjectByType<CinemachineCamera>();
+            if (vcam != null)
+            {
+                vcam.Follow = playerTransform;
+                vcam.PreviousStateIsValid = false;
+            }
+
+            if (entry.setPlayerDirection)
+            {
+                Animator animator = playerTransform.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetFloat("Look X", entry.playerDirection.x);
+                    animator.SetFloat("Look Y", entry.playerDirection.y);
+                }
+            }
+
+            SnapCameraToPlayer();
+        });
     }
 
     public void SnapCameraToPlayer()
