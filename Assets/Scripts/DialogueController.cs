@@ -13,11 +13,21 @@ public class DialogueController : MonoBehaviour
     public Image portraitImage;
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
+    
+    [Header("Choice Positioning")]
+    [Tooltip("Base Y position offset from dialogue box for 1 choice")]
+    public float baseYOffset = 50f;
+    [Tooltip("Additional Y offset per extra choice")]
+    public float offsetPerChoice = 40f;
+    
+    private RectTransform choiceContainerRect;
+    
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
+        
+        choiceContainerRect = choiceContainer.GetComponent<RectTransform>();
     }
     public void ShowDialogueUI(bool show)
     {
@@ -61,7 +71,19 @@ public class DialogueController : MonoBehaviour
         GameObject choiceButton = Instantiate(choiceButtonPrefab, choiceContainer);
         choiceButton.GetComponentInChildren<TMP_Text>().text = choiceText;
         choiceButton.GetComponent<Button>().onClick.AddListener(onClick);
+    }
+    
+    public void AdjustChoiceContainerPosition(int numberOfChoices)
+    {
+        if (choiceContainerRect == null) return;
         
+        // Calculate offset based on number of choices
+        // Fewer choices = closer to dialogue box
+        float yOffset = baseYOffset + (offsetPerChoice * (numberOfChoices - 1));
+        
+        // Update the anchored position
+        Vector2 currentPos = choiceContainerRect.anchoredPosition;
+        choiceContainerRect.anchoredPosition = new Vector2(currentPos.x, yOffset);
     }
 
 }

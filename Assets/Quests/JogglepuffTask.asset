@@ -17,9 +17,9 @@ MonoBehaviour:
   questId: fa02c43d-fcb7-4551-b8a6-7d9602eeff67
   objectives:
   - objectiveID: 3
-    description: Collect 8 Gym Badges!
+    description: Collect 4 Badges!
     type: 0
-    requiredAmount: 5
+    requiredAmount: 4
     currentAmount: 0
-    acceptableItemIDs: 030000000500000009000000
+    acceptableItemIDs: 0300000005000000090000000a000000
   questRewards: []

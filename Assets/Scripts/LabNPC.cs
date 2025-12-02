@@ -330,6 +330,9 @@ public class LabNPC : MonoBehaviour, IInteractable
                 ChooseOption(nextIndex, givesQuest);
             });
         }
+        
+        // Adjust choice container position based on number of choices
+        dialogueUI.AdjustChoiceContainerPosition(choice.choices.Length);
     }
 
     private void ChooseOption(int nextIndex, bool givesQuest)
