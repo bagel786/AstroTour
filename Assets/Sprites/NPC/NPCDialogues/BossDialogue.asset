@@ -26,13 +26,25 @@ MonoBehaviour:
   - Using the spaceship pass behind me, you can travel to different worlds.
   - 'Each world will give you a specific award if you complete a certain amount of
     tasks there. '
-  - I need you to collect awards from each of the five worlds!
+  - I need you to collect awards from each of the four worlds!
   - I'd recommend getting started with MedLab Complex or Cipher Nexus, but its your
     choice!
   - Use this spaceship pass to travel!
   - How's the research going along?
-  autoProgressLines: 010101010001010101010000
-  endDialogueLines: 000000000100000000000101
+  - I see you've collected every badge I've asked for!
+  - And you finished in upmost time as well!
+  - Kudos to you, I've never heard of or had a researcher as capable as you ever!
+  - Honestly, you could climb the ladder here if you were to stay longer.
+  - However, I'm sure you have other goals and aspirations in life, unless you want
+    to become a researcher here forever.
+  - I'll let you decide, but first, take this King's Crown!
+  - It's a rare artifact gifted to me by an archaeologists, and I want you to have
+    it!
+  - I think it represents what you have accomplished here extremely well!
+  - Once again, a huge congrats to you, and I wish you the best in your future!
+  - Have you decided what you want to do yet?
+  autoProgressLines: 01010101000101010101000001010101010101010000
+  endDialogueLines: 00000000010000000000010100000000000000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 736d9d84644fd4fb8908d0a566fbce37, type: 3}
@@ -49,7 +61,7 @@ MonoBehaviour:
     waypointNames: []
     givesQuest: 0100
   questInProgressIndex: 11
-  questCompletedIndex: 8
+  questCompletedIndex: 12
   quest: {fileID: 11400000, guid: 353d62672f4644fb69c9732093deecb9, type: 2}
   itemRewards:
   - itemID: 2

@@ -4998,6 +4998,18 @@ PrefabInstance:
       propertyPath: closeButton
       value: 
       objectReference: {fileID: 809176763}
+    - target: {fileID: 3152833566637159549, guid: e35ddbc114734475fb5f1af739ecfb7c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0424415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152833566637159549, guid: e35ddbc114734475fb5f1af739ecfb7c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0051808357
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152833566637159549, guid: e35ddbc114734475fb5f1af739ecfb7c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14509632
+      objectReference: {fileID: 0}
     - target: {fileID: 6170022459802063818, guid: e35ddbc114734475fb5f1af739ecfb7c, type: 3}
       propertyPath: m_Name
       value: Jogglepuff
@@ -85837,7 +85849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4, y: 23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &987176950
@@ -92147,7 +92159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424, y: 187}
+  m_AnchoredPosition: {x: -424, y: 193}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1340025207
@@ -93783,7 +93795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1443967633
@@ -96967,6 +96979,7 @@ MonoBehaviour:
   - {fileID: 9162747137852576487, guid: cecd89f32481a46b7832a5f37f9e206a, type: 3}
   - {fileID: 4061116557272881314, guid: 9667c69ad64e54ae59c53797bf87d9ed, type: 3}
   - {fileID: 7915944286397884146, guid: 18fcc6b24a6f64f7a98e3bc9f3bd6bf0, type: 3}
+  - {fileID: 5286138178864760641, guid: ff179456803e144209e094c899b90036, type: 3}
 --- !u!4 &1587945527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 99138694744008208, guid: 49e3534f0f29446759c81e6728327681, type: 3}
@@ -99626,7 +99639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: -5}
+  m_AnchoredPosition: {x: -116, y: 1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1737092401

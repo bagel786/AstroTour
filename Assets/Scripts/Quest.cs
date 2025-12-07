@@ -9,9 +9,15 @@ public class Quest : ScriptableObject
     public string questId;
     public List<QuestObjective> objectives;
     public List<QuestReward> questRewards;
+    
+    [Header("Dialogue Integration")]
+    [Tooltip("Dialogue index to use after quest rewards have been given. Set to -1 to disable. Used by NPCs to show different dialogue after quest completion and reward handout.")]
+    public int questRewardsGivenIndex = -1;
 
-
-    private void OnValidate() // called whenever object is edited in inspector
+    /// <summary>
+    /// Called whenever object is edited in inspector
+    /// </summary>
+    private void OnValidate()
     {
         if (string.IsNullOrEmpty(questId))
         {

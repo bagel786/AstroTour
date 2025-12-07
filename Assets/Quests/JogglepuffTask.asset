@@ -22,4 +22,7 @@ MonoBehaviour:
     requiredAmount: 4
     currentAmount: 0
     acceptableItemIDs: 0300000005000000090000000a000000
-  questRewards: []
+  questRewards:
+  - type: 0
+    rewardID: 12
+    amount: 1

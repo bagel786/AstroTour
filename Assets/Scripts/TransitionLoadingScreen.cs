@@ -49,22 +49,23 @@ public class TransitionLoadingScreen : MonoBehaviour
 
         gameObject.AddComponent<GraphicRaycaster>();
 
-        // Create fade panel
+        // Create fade panel that covers entire screen
         GameObject fadePanel = new GameObject("FadePanel");
-        fadePanel.transform.SetParent(transform);
+        fadePanel.transform.SetParent(transform, false);
         fadeImage = fadePanel.AddComponent<Image>();
         fadeImage.color = new Color(0, 0, 0, 0);
         
         RectTransform fadeRect = fadeImage.GetComponent<RectTransform>();
         fadeRect.anchorMin = Vector2.zero;
         fadeRect.anchorMax = Vector2.one;
-        fadeRect.offsetMin = new Vector2(-100, 0);
-        fadeRect.offsetMax = new Vector2(100, 0);
-        fadeRect.localScale = Vector3.one;
+        fadeRect.offsetMin = new Vector2(-200, -200);
+        fadeRect.offsetMax = new Vector2(200, 200);
+        fadeRect.pivot = new Vector2(0.5f, 0.5f);
+        fadeRect.anchoredPosition = Vector2.zero;
 
         // Create loading indicator
         loadingIndicator = new GameObject("LoadingIndicator");
-        loadingIndicator.transform.SetParent(transform);
+        loadingIndicator.transform.SetParent(transform, false);
         
         Text loadingText = loadingIndicator.AddComponent<Text>();
         loadingText.text = "Loading...";

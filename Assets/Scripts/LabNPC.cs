@@ -71,24 +71,38 @@ public class LabNPC : MonoBehaviour, IInteractable
         SyncRewardState();
         
         // Determine starting dialogue index based on states
-        // Priority: Item rewards given takes precedence over quest states
-        if (rewardState == RewardState.Given && dialogueData.itemRewardsGivenIndex >= 0)
+        // Priority order (quest states take precedence over item rewards):
+        // 1. Quest rewards given (highest priority)
+        // 2. Quest completed (but rewards not yet given)
+        // 3. Quest in progress
+        // 4. Item rewards given (only if no active quest)
+        // 5. Default start (index 0)
+        
+        if (dialogueData.quest != null && 
+            QuestController.Instance.IsQuestHandedIn(dialogueData.quest.questId) && 
+            dialogueData.quest.questRewardsGivenIndex >= 0)
         {
-            // Item rewards have been given - use itemRewardsGivenIndex regardless of quest state
-            dialogueIndex = dialogueData.itemRewardsGivenIndex;
-            Debug.Log($"LabNPC: Starting dialogue at itemRewardsGivenIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (rewards already given - takes precedence)");
+            // Quest rewards have been given - use questRewardsGivenIndex
+            dialogueIndex = dialogueData.quest.questRewardsGivenIndex;
+            Debug.Log($"LabNPC: Starting dialogue at questRewardsGivenIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (quest rewards already given)");
         }
         else if (questState == QuestState.Completed)
         {
-            // Quest completed but no rewards given yet
+            // Quest completed but rewards not yet given
             dialogueIndex = dialogueData.questCompletedIndex;
-            Debug.Log($"LabNPC: Starting dialogue at questCompletedIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (quest completed, no rewards given yet)");
+            Debug.Log($"LabNPC: Starting dialogue at questCompletedIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (quest completed, rewards not yet given)");
         }
         else if (questState == QuestState.InProgress)
         {
             // Quest in progress
             dialogueIndex = dialogueData.questInProgressIndex;
             Debug.Log($"LabNPC: Starting dialogue at questInProgressIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (quest in progress)");
+        }
+        else if (rewardState == RewardState.Given && dialogueData.itemRewardsGivenIndex >= 0)
+        {
+            // Item rewards have been given (and no quest is active) - use itemRewardsGivenIndex
+            dialogueIndex = dialogueData.itemRewardsGivenIndex;
+            Debug.Log($"LabNPC: Starting dialogue at itemRewardsGivenIndex {dialogueIndex} for NPC '{dialogueData.npcName}' (item rewards already given, no active quest)");
         }
         else
         {
