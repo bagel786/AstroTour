@@ -11,6 +11,9 @@ public class Quest : ScriptableObject
     public List<QuestReward> questRewards;
     
     [Header("Dialogue Integration")]
+    [Tooltip("Dialogue index where quest rewards should be given to the player. Set to -1 to give rewards when dialogue ends (legacy behavior).")]
+    public int giveQuestRewardsAtIndex = -1;
+    
     [Tooltip("Dialogue index to use after quest rewards have been given. Set to -1 to disable. Used by NPCs to show different dialogue after quest completion and reward handout.")]
     public int questRewardsGivenIndex = -1;
 

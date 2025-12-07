@@ -379,10 +379,27 @@ public class LabNPC : MonoBehaviour, IInteractable
 
         if (isTyping && typingCoroutine != null)
             StopCoroutine(typingCoroutine);
-        if(questState == QuestState.Completed && !QuestController.Instance.IsQuestHandedIn(dialogueData.quest.questId)){
-            // handle quest completion
-            HandleQuestCompletion(dialogueData.quest);
+        
+        // Handle quest completion rewards
+        // Only give rewards at EndDialogue if giveQuestRewardsAtIndex is -1 (legacy behavior)
+        // Otherwise, rewards are given at the specified dialogue index
+        if (questState == QuestState.Completed && 
+            !QuestController.Instance.IsQuestHandedIn(dialogueData.quest.questId))
+        {
+            if (dialogueData.quest.giveQuestRewardsAtIndex < 0)
+            {
+                // Legacy behavior: give rewards when dialogue ends
+                Debug.Log($"LabNPC: Giving quest rewards at dialogue end (legacy behavior) for quest '{dialogueData.quest.questName}'");
+                HandleQuestCompletion(dialogueData.quest);
+            }
+            else
+            {
+                // Rewards should have been given at a specific dialogue index
+                // If we reach here, the player closed dialogue before reaching that index
+                Debug.LogWarning($"LabNPC: Quest '{dialogueData.quest.questName}' rewards were not given (player closed dialogue before index {dialogueData.quest.giveQuestRewardsAtIndex})");
+            }
         }
+        
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
 
@@ -425,7 +442,7 @@ public class LabNPC : MonoBehaviour, IInteractable
     }
 
     /// <summary>
-    /// Processes item rewards for the current dialogue index
+    /// Processes item rewards and quest rewards for the current dialogue index
     /// </summary>
     private void ProcessItemRewards()
     {
@@ -437,56 +454,71 @@ public class LabNPC : MonoBehaviour, IInteractable
 
         if (dialogueData == null)
         {
-            Debug.LogWarning("LabNPC: Cannot process item rewards - dialogueData is null");
+            Debug.LogWarning("LabNPC: Cannot process rewards - dialogueData is null");
             return;
         }
 
-        if (dialogueData.itemRewards == null || dialogueData.itemRewards.Length == 0)
+        // Process item rewards
+        if (dialogueData.itemRewards != null && dialogueData.itemRewards.Length > 0)
         {
-            // This is normal - not all NPCs have item rewards
-            return;
-        }
-
-        try
-        {
-            int rewardsProcessed = 0;
-            foreach (DialogueItemReward reward in dialogueData.itemRewards)
+            try
             {
-                if (reward == null)
+                int rewardsProcessed = 0;
+                foreach (DialogueItemReward reward in dialogueData.itemRewards)
                 {
-                    Debug.LogWarning($"LabNPC: Skipping null reward in itemRewards array for NPC '{dialogueData.npcName}'");
-                    continue;
-                }
-
-                // Check if this reward should be given at the current dialogue index
-                if (reward.dialogueIndex == dialogueIndex)
-                {
-                    try
+                    if (reward == null)
                     {
-                        GiveItemReward(reward);
-                        rewardsProcessed++;
+                        Debug.LogWarning($"LabNPC: Skipping null reward in itemRewards array for NPC '{dialogueData.npcName}'");
+                        continue;
                     }
-                    catch (System.Exception ex)
+
+                    // Check if this reward should be given at the current dialogue index
+                    if (reward.dialogueIndex == dialogueIndex)
                     {
-                        Debug.LogError($"LabNPC: Exception occurred while processing reward '{reward.uniqueRewardID}' at dialogue index {dialogueIndex}: {ex.Message}");
-                        // Continue processing other rewards even if one fails
+                        try
+                        {
+                            GiveItemReward(reward);
+                            rewardsProcessed++;
+                        }
+                        catch (System.Exception ex)
+                        {
+                            Debug.LogError($"LabNPC: Exception occurred while processing reward '{reward.uniqueRewardID}' at dialogue index {dialogueIndex}: {ex.Message}");
+                            // Continue processing other rewards even if one fails
+                        }
                     }
                 }
-            }
 
-            if (rewardsProcessed > 0)
+                if (rewardsProcessed > 0)
+                {
+                    Debug.Log($"LabNPC: Processed {rewardsProcessed} item reward(s) at dialogue index {dialogueIndex}");
+                }
+            }
+            catch (System.Exception ex)
             {
-                Debug.Log($"LabNPC: Processed {rewardsProcessed} reward(s) at dialogue index {dialogueIndex} after typing completed");
+                Debug.LogError($"LabNPC: Critical exception occurred while processing item rewards: {ex.Message}");
+                // Continue dialogue flow even if reward processing fails completely
             }
+        }
 
-            // Mark rewards as processed for this line
-            rewardsProcessedForCurrentLine = true;
-        }
-        catch (System.Exception ex)
+        // Process quest rewards if this is the specified dialogue index
+        if (dialogueData.quest != null && 
+            dialogueData.quest.giveQuestRewardsAtIndex == dialogueIndex &&
+            questState == QuestState.Completed &&
+            !QuestController.Instance.IsQuestHandedIn(dialogueData.quest.questId))
         {
-            Debug.LogError($"LabNPC: Critical exception occurred while processing item rewards: {ex.Message}");
-            // Continue dialogue flow even if reward processing fails completely
+            try
+            {
+                Debug.Log($"LabNPC: Giving quest rewards at dialogue index {dialogueIndex} for quest '{dialogueData.quest.questName}'");
+                HandleQuestCompletion(dialogueData.quest);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"LabNPC: Exception occurred while processing quest rewards at dialogue index {dialogueIndex}: {ex.Message}");
+            }
         }
+
+        // Mark rewards as processed for this line
+        rewardsProcessedForCurrentLine = true;
     }
 
     /// <summary>

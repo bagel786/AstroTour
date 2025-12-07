@@ -26,3 +26,5 @@ MonoBehaviour:
   - type: 0
     rewardID: 12
     amount: 1
+  giveQuestRewardsAtIndex: 17
+  questRewardsGivenIndex: 21
