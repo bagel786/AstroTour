@@ -13618,6 +13618,7 @@ GameObject:
   - component: {fileID: 897661946}
   - component: {fileID: 897661947}
   - component: {fileID: 897661948}
+  - component: {fileID: 897661949}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -13727,6 +13728,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e41571552774a69b24f041e5a25698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueRewardManager
+--- !u!114 &897661949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897661939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9b81d7c81724789a092ac7a446470a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveSystemManager
+  forceCloudSave: 1
 --- !u!1001 &902658712
 PrefabInstance:
   m_ObjectHideFlags: 0

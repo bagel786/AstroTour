@@ -11,7 +11,6 @@ public class CloudSaveSystem : ISaveSystem
             string json = JsonUtility.ToJson(saveData, true);
             PlayerPrefs.SetString(saveKey, json);
             PlayerPrefs.Save();
-            Debug.Log("CloudSaveSystem: Game saved to PlayerPrefs");
         }
         catch (System.Exception ex)
         {

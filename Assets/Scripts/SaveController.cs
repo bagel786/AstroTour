@@ -48,9 +48,12 @@ public class SaveController : MonoBehaviour
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         
-        // Log the save file location for debugging
-        Debug.Log($"SaveController: Save file location: {saveLocation}");
-        Debug.Log($"SaveController: Persistent data path: {Application.persistentDataPath}");
+        // Ensure SaveSystemManager exists
+        if (SaveSystemManager.Instance == null)
+        {
+            GameObject saveSystemManagerGO = new GameObject("SaveSystemManager");
+            saveSystemManagerGO.AddComponent<SaveSystemManager>();
+        }
         
         inventoryController = FindAnyObjectByType<InventoryController>();
         if (inventoryController == null)
@@ -94,13 +97,11 @@ public class SaveController : MonoBehaviour
         {
             // Use the modern save system (automatically detects PlayerPrefs vs JSON)
             SaveSystemManager.Instance.SaveGame(saveData);
-            Debug.Log("Game saved using SaveSystemManager (auto-detected platform)");
         }
         else
         {
             // Fallback to legacy file system
             File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
-            Debug.Log($"Game saved using legacy system to: {saveLocation}");
         }
     }
 
