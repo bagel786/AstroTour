@@ -16,7 +16,7 @@ MonoBehaviour:
   npcPortrait: {fileID: -859478701035112093, guid: 67067ad722fc146d4a78468deeb8d672, type: 3}
   dialogueLines:
   - Hey you there!
-  - We've got an amergency going on! Our data systems have been breached!
+  - We've got an emergency going on! Our data systems have been breached!
   - I need your help, and if you're willing, I'll make sure to reward you handsomely!
   - You up for the challenge?
   - Great to hear! I need you to find me 5 hard drives
