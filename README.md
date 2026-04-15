@@ -93,9 +93,8 @@ Assets/
 ### Controls
 - **WASD / Arrow Keys**: Move character
 - **E**: Interact with NPCs and terminals
-- **I**: Open inventory
-- **M**: Open map
-- **ESC**: Pause menu
+- **TAB**: Open inventory
+- **SPACE**: To skip specific dialogue lines
 
 ## Quest Types
 
