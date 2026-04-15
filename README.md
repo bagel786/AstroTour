@@ -1,10 +1,19 @@
 # AstroTour - Educational Quest-Based Game
 
-A 2D Unity game featuring an astronaut character exploring different themed environments while completing educational quests and mini-games.
+> **A Unity FBLA Game Project** — Travel through various worlds to learn about different careers & complete challenges!
+
+[![Play on Unity](https://img.shields.io/badge/Play%20on-Unity%20Play-blue?logo=unity)](https://play.unity.com/en/games/4840d816-e430-4887-87ae-8159a44fba21/astrotour)
+[![GitHub](https://img.shields.io/badge/GitHub-bagel786%2FAstroTour-black?logo=github)](https://github.com/bagel786/AstroTour)
+
+🎮 **[Play AstroTour on Unity Play](https://play.unity.com/en/games/4840d816-e430-4887-87ae-8159a44fba21/astrotour)**
+
+A 2D Unity game featuring an astronaut character exploring different themed environments while completing educational quests and mini-games. Play it directly in your browser — no download required!
 
 ## Overview
 
 AstroTour is an educational adventure game where players navigate through various themed areas including cybersecurity labs, medical facilities, entrepreneurship centers, and quantum computing spaces. Players complete quests by interacting with NPCs, solving puzzles, and collecting items.
+
+Built as an **FBLA (Future Business Leaders of America)** game project, AstroTour aims to teach students about different STEM and business careers through interactive gameplay.
 
 ## Features
 
@@ -54,15 +63,15 @@ AstroTour is an educational adventure game where players navigate through variou
 
 ```
 Assets/
-├── Animations/          # Character animations
-├── Audio/              # Sound effects and music
-├── Decorations/        # Environment props by theme
-├── Prefabs/            # Reusable game objects
-├── Quests/             # Quest ScriptableObjects
-├── Scenes/             # Game levels
-├── Scripts/            # C# game logic
-├── Sprites/            # 2D artwork and UI
-└── Tiles/              # Tilemap assets
+├── Animations/ # Character animations
+├── Audio/      # Sound effects and music
+├── Decorations/ # Environment props by theme
+├── Prefabs/    # Reusable game objects
+├── Quests/     # Quest ScriptableObjects
+├── Scenes/     # Game levels
+├── Scripts/    # C# game logic
+├── Sprites/    # 2D artwork and UI
+└── Tiles/      # Tilemap assets
 ```
 
 ## Getting Started
@@ -74,6 +83,9 @@ Assets/
 
 ### Installation
 1. Clone this repository
+   ```bash
+   git clone https://github.com/bagel786/AstroTour.git
+   ```
 2. Open the project in Unity
 3. Open `Assets/Scenes/MainMenu.unity` to start
 4. Press Play to run the game
@@ -125,6 +137,10 @@ Save data includes:
 - Player position
 - Game settings
 
+## Links
+- 🎮 **Play the game**: [AstroTour on Unity Play](https://play.unity.com/en/games/4840d816-e430-4887-87ae-8159a44fba21/astrotour)
+- 📦 **Source code**: [bagel786/AstroTour on GitHub](https://github.com/bagel786/AstroTour)
+
 ## Contributing
 
 This is an educational project. Contributions welcome for:
@@ -138,7 +154,6 @@ This is an educational project. Contributions welcome for:
 Educational project - check with repository owner for usage rights.
 
 ## Acknowledgments
-
 - Sprite assets from various pixel art sources
 - Unity community for tutorials and support
 - Educational content inspired by STEM learning objectives
